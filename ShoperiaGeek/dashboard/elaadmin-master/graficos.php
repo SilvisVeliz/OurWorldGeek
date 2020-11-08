@@ -1,28 +1,68 @@
+<?php
+$host="localhost";
+$user="root";
+$pass="";
+$db="shoperiageek";
+include_once "conexion.php";
+$con=mysqli_connect($host,$user,$pass,$db);
+
+$queryVentas7Dias="SELECT COUNT(idPedido) as num from pedido where fechaPedido BETWEEN DATE(DATE_SUB(NOW(),INTERVAL 7 DAY) )AND NOW(); ";
+$resVentas7Dias=mysqli_query($con,$queryVentas7Dias);
+$rowVentas7Dias=mysqli_fetch_assoc($resVentas7Dias);
+
+$queryTotalClientes="SELECT COUNT(idCliente) as num from cliente";
+$resToralClientes=mysqli_query($con,$queryTotalClientes);
+$rowTotalClientes=mysqli_fetch_assoc($resToralClientes);
+
+$queryVentasPorDia="
+SELECT sum(detallePedido.cantidadCompra) as total,pedido.fechaPedido from pedido INNER JOIN detallePedido on detallePedido.idPedido = pedido.idPedido
+GROUP BY DAY(pedido.fechaPedido);";
+$resVentasPorDia=mysqli_query($con,$queryVentasPorDia);
+$labelPedidos="";
+$datosPedidos="";
+while($rowVentasPorDia=mysqli_fetch_assoc($resVentasPorDia)){
+    $labelPedidos=$labelPedidos."'".date_format(date_create($rowVentasPorDia['fechaPedido']),"Y-m-d")."',";
+    $datosPedidos=$datosPedidos.$rowVentasPorDia['total'].",";
+}
+$labelPedidos=rtrim($labelPedidos,",");
+$datosPedidos=rtrim($datosPedidos,",");
+
+
+
+
+?>
+
+<script>
+    var labelPedidos=[<?php echo $labelPedidos; ?>]
+    var datosPedidos=[<?php echo $datosPedidos; ?>]
+</script>
+
+
 <!-- Content -->
 <div class="content">
     <!-- Animated -->
     <div class="animated fadeIn">
         <!-- Widgets  -->
         <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-five">
-                            <div class="stat-icon dib flat-color-1">
-                                <i class="pe-7s-cash"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="text-left dib">
-                                    <div class="stat-text">$<span class="count">23569</span></div>
-                                    <div class="stat-heading">Ingresos</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- <div class="col-lg-3 col-md-6">
+                 <div class="card">
+                     <div class="card-body">
+                         <div class="stat-widget-five">
+                             <div class="stat-icon dib flat-color-1">
+                                 <i class="pe-7s-cash"></i>
+                             </div>
+                             <div class="stat-content">
+                                 <div class="text-left dib">
+                                     <div class="stat-text">$<span class="count">23569</span></div>
+                                     <div class="stat-heading">Ingresos</div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>-->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
@@ -31,8 +71,8 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">3435</span></div>
-                                    <div class="stat-heading">Ventas</div>
+                                    <div class="stat-text"><span class="count"><?php echo $rowVentas7Dias['num']?></span></div>
+                                    <div class="stat-heading">Pedidos de 7 días</div>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <!--<div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
@@ -56,9 +96,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
@@ -67,8 +107,8 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">2986</span></div>
-                                    <div class="stat-heading">Clientes</div>
+                                    <div class="stat-text"><span class="count"><?php echo $rowTotalClientes['num'] ?></span></div>
+                                    <div class="stat-heading">Total de clientes</div>
                                 </div>
                             </div>
                         </div>
@@ -82,47 +122,18 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="box-title">Tráfico </h4>
+                        <h4 class="box-title">Ventas por día </h4>
                     </div>
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-12">
                             <div class="card-body">
                                 <!-- <canvas id="TrafficChart"></canvas>   -->
                                 <div id="traffic-chart" class="traffic-chart"></div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="card-body">
-                                <div class="progress-box progress-1">
-                                    <h4 class="por-title">Visitas</h4>
-                                    <div class="por-txt">96,930 Usuarios (40%)</div>
-                                    <div class="progress mb-2" style="height: 5px;">
-                                        <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="progress-box progress-2">
-                                    <h4 class="por-title">Porcentaje de rebote</h4>
-                                    <div class="por-txt">3,220 Usuarios (24%)</div>
-                                    <div class="progress mb-2" style="height: 5px;">
-                                        <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="progress-box progress-2">
-                                    <h4 class="por-title">Visitantes únicos</h4>
-                                    <div class="por-txt">29,658 Usuarios (60%)</div>
-                                    <div class="progress mb-2" style="height: 5px;">
-                                        <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="progress-box progress-2">
-                                    <h4 class="por-title">Visitantes objetivo</h4>
-                                    <div class="por-txt">99,658 Usuarios (90%)</div>
-                                    <div class="progress mb-2" style="height: 5px;">
-                                        <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div> <!-- /.card-body -->
-                        </div>
+
+                        <!-- Acá necesario-->
+
                     </div> <!-- /.row -->
                     <div class="card-body"></div>
                 </div>

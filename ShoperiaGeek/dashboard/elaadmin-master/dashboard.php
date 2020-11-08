@@ -396,19 +396,19 @@ $modulo=$_REQUEST['modulo']??'';
             });
             // Line Chart  #flotLine5 End
             // Traffic Chart using chartist
+
+            //El bueno grafica
             if ($('#traffic-chart').length) {
                 var chart = new Chartist.Line('#traffic-chart', {
-                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                  labels: labelPedidos,
                   series: [
-                  [0, 18000, 35000,  25000,  22000,  0],
-                  [0, 33000, 15000,  20000,  15000,  300],
-                  [0, 15000, 28000,  15000,  30000,  5000]
+                    datosPedidos
                   ]
               }, {
                   low: 0,
                   showArea: true,
-                  showLine: false,
-                  showPoint: false,
+                  showLine: true,
+                  showPoint: true,
                   fullWidth: true,
                   axisX: {
                     showGrid: true
@@ -430,6 +430,15 @@ $modulo=$_REQUEST['modulo']??'';
                 });
             }
             // Traffic Chart using chartist End
+
+
+
+
+
+
+
+
+
             //Traffic chart chart-js
             if ($('#TrafficChart').length) {
                 var ctx = document.getElementById( "TrafficChart" );
@@ -437,7 +446,7 @@ $modulo=$_REQUEST['modulo']??'';
                 var myChart = new Chart( ctx, {
                     type: 'line',
                     data: {
-                        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
+                        labels: [ "ASAS", "SADDDD", "Mar", "Apr", "May", "Jun", "Jul" ],
                         datasets: [
                         {
                             label: "Visit",
@@ -478,6 +487,15 @@ $modulo=$_REQUEST['modulo']??'';
                     }
                 } );
             }
+
+
+
+
+
+
+
+
+
             //Traffic chart chart-js  End
             // Bar Chart #flotBarChart
             $.plot("#flotBarChart", [{
