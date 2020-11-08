@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="91162aab-6354-4e60-8ded-1c4fcb284cda" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoperiaGeek/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ShoperiaGeek/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoperiaGeek/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/ShoperiaGeek/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoperiaGeek/img/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoperiaGeek/img/product01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoperiaGeek/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoperiaGeek/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoperiaGeek/conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/ShoperiaGeek/conexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoperiaGeek/dashboard/elaadmin-master/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/ShoperiaGeek/dashboard/elaadmin-master/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoperiaGeek/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoperiaGeek/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1iqykOMwRZMNXVO7mDO05HuDCKh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -27,9 +45,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShoperiaGeek/_shoperiageek.sql" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,16 +65,46 @@
       <workItem from="1602919337660" duration="1486000" />
       <workItem from="1602980217593" duration="30000" />
       <workItem from="1602981732687" duration="11644000" />
+      <workItem from="1604692494421" duration="6785000" />
+      <workItem from="1604718982129" duration="3412000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1602816983982">
+    <state x="263" y="19" key="#CLI_Interpreters" timestamp="1604696168478">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602816983982" />
+    <state x="263" y="19" key="#CLI_Interpreters/0.0.1366.728@0.0.1366.728" timestamp="1604696168478" />
+    <state x="390" y="7" key="#PHP" timestamp="1604696172011">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="7" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1604696172011" />
+    <state x="268" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604725178654">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="268" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1604725178654" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1604725110404">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604725110404" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1604693752761">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1604693752761" />
   </component>
 </project>

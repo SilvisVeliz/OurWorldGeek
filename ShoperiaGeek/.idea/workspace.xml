@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="be202fbb-9c9d-41f3-bc0e-5a7ff29e88bf" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1jwzU6wr7c0t9OCvpSYePrC6R5B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard/elaadmin-master/controllers" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ShoperiaGeek\dashboard\elaadmin-master\controllers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be202fbb-9c9d-41f3-bc0e-5a7ff29e88bf" name="Default Changelist" comment="" />
+      <created>1604729954654</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604729954654</updated>
+      <workItem from="1604729955778" duration="8346000" />
+      <workItem from="1604776754067" duration="6827000" />
+      <workItem from="1604784680837" duration="649000" />
+      <workItem from="1604787530440" duration="33548000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="432" y="87" key="NewPhpClassDialog" timestamp="1604810914998">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="432" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1604810914998" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1604811573380">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1604811573380" />
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1604803791574">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604803791574" />
+  </component>
+</project>
