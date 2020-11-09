@@ -8,12 +8,8 @@ $con=mysqli_connect($host,$user,$pass,$db);
 
 if(isset($_REQUEST['guardar'])){
     $email=mysqli_real_escape_string($con,$_REQUEST['email']??'');
-    $pass=md5(mysqli_real_escape_string($con,$_REQUEST['password']??''));
     $nombre=mysqli_real_escape_string($con,$_REQUEST['nombre']??'');
-    $apellido=mysqli_real_escape_string($con,$_REQUEST['apellido']??'');
     $telefono=mysqli_real_escape_string($con,$_REQUEST['telefono']??'');
-    $acceso=mysqli_real_escape_string($con,$_REQUEST['acceso']??'');
-    $sueldo=mysqli_real_escape_string($con,$_REQUEST['sueldo']??'');
     $id=mysqli_real_escape_string($con,$_REQUEST['id']??'');
     $calle=mysqli_real_escape_string($con,$_REQUEST['calle']??'');
     $idDireccion=mysqli_real_escape_string($con,$_REQUEST['idDireccion']??'');
@@ -26,10 +22,10 @@ if(isset($_REQUEST['guardar'])){
 
 
 
-    $query="UPDATE empleado SET
-        emailEmpleado='".$email."',passwordEmpleado='".$pass."',nombreEmpleado='".$nombre."',apellidoEmpleado='".$apellido."',telefonoempleado='".$telefono."',
-        acceso='".$acceso."', Suledo='".$sueldo."'
-        where idEmpleado='".$id."';
+
+    $query="UPDATE proveedor SET
+        emailProveedor='".$email."',nombreProveedor='".$nombre."',telefonoProveedor='".$telefono."' 
+        where idProveedor='".$id."';
         ";
     $res=mysqli_query($con,$query);
     $query2="UPDATE direccion SET
@@ -38,12 +34,12 @@ if(isset($_REQUEST['guardar'])){
     $re2s=mysqli_query($con,$query2);
     if($res){
         if($re2s){
-            echo '<meta http-equiv="refresh" content="0; url=dashboard.php?modulo=empleados&mensaje=Empleado '.$nombre.' editado exitosamente"/>';
+            echo '<meta http-equiv="refresh" content="0; url=dashboard.php?modulo=proveedores&mensaje=Proveedor '.$nombre.' editado exitosamente"/>';
         }else{
             ?>
 
             <div class="alert alert-danger role="alert>
-                Error al editar empleado <?php echo mysqli_error($con);?>
+                Error al editar proveedor <?php echo mysqli_error($con);?>
             </div>
 
             <?php
@@ -53,20 +49,21 @@ if(isset($_REQUEST['guardar'])){
         ?>
 
         <div class="alert alert-danger role="alert>
-            Error al editar empleado <?php echo mysqli_error($con);?>
+            Error al editar proveedor <?php echo mysqli_error($con);?>
         </div>
 
         <?php
     }
 }
 $id=mysqli_real_escape_string($con, $_REQUEST['id']??'');
-$query="SELECT idEmpleado,emailEmpleado,passwordEmpleado,nombreEmpleado,apellidoEmpleado,telefonoempleado, acceso,suledo, idDireccion from empleado where idEmpleado='".$id."'; ";
+$query="SELECT idProveedor,emailProveedor,nombreProveedor,telefonoProveedor,idDireccion from proveedor where idProveedor='".$id."'; ";
 $res=mysqli_query($con,$query);
 $row=mysqli_fetch_assoc($res);
-$query2="SELECT direccion.idDireccion,direccion.calle,direccion.colonia,direccion.codigoPostal,direccion.Estado,direccion.numeroInterio,direccion.numeroExterior from direccion inner join empleado on direccion.idDireccion=empleado.idDireccion where idEmpleado='".$id."'";
+$query2="SELECT direccion.idDireccion,direccion.calle,direccion.colonia,direccion.codigoPostal,direccion.Estado,direccion.numeroInterio,direccion.numeroExterior from direccion inner join proveedor on direccion.idDireccion=proveedor.idDireccion where idProveedor='".$id."'";
 $res2=mysqli_query($con,$query2);
 $row2=mysqli_fetch_assoc($res2);
-$queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acceso;");
+
+
 ?>
 
 
@@ -78,55 +75,22 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Editar Empleado </strong>
+                        <strong class="card-title">Editar Proveedor </strong>
                     </div>
                     <div class="card-body">
-                        <form action="dashboard.php?modulo=editarEmpleado" method="post">
+                        <form action="dashboard.php?modulo=editarProveedor" method="post">
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" name="email" class="form-control" value="<?php echo $row['emailEmpleado']; ?>" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" name="password" class="form-control" required="required">
+                                <input type="email" name="email" class="form-control" value="<?php echo $row['emailProveedor']; ?>" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" name="nombre" class="form-control" value="<?php echo $row['nombreEmpleado'] ?>" required="required">
+                                <input type="text" name="nombre" class="form-control" value="<?php echo $row['nombreProveedor'] ?>" required="required">
                             </div>
-                            <div class="form-group">
-                                <label>Apellido</label>
-                                <input type="text" name="apellido" class="form-control" value="<?php echo $row['apellidoEmpleado'] ?>" required="required">
-                            </div>
+
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <input type="number" name="telefono" class="form-control" value="<?php echo $row['telefonoempleado'] ?>" required="required">
-                            </div>
-
-
-                            <div class="form-group">
-                                <label>Acceso</label>
-                                <label type="text" class="form-control" required="required"><?php echo $row['acceso'] ?>
-                            </div>
-
-
-                            <div class="form-group">
-                                <select name="acceso">
-                                    <?php
-                                    while($nombreAcceso=mysqli_fetch_array($queryNombreAcceso)){
-
-                                        ?>
-                                        <option value="<?php echo $nombreAcceso['acceso'] ?>"><?php echo $nombreAcceso['acceso'] ?></option>
-                                        <?php
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label>Sueldo</label>
-                                <input type="number" name="sueldo" class="form-control" value="<?php echo $row['suledo'] ?>" required="required">
+                                <input type="number" name="telefono" class="form-control" value="<?php echo $row['telefonoProveedor'] ?>" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Calle</label>
@@ -138,7 +102,7 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
                             </div>
                             <div class="form-group">
                                 <label>Codigo Postal</label>
-                                <input type="text" name="codigoPostal" class="form-control" value="<?php echo $row2['codigoPostal'] ?>" required="required">
+                                <input type="number" name="codigoPostal" class="form-control" value="<?php echo $row2['codigoPostal'] ?>" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Estado</label>
@@ -152,7 +116,10 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
                                 <label>Numero Interior</label>
                                 <input type="number" name="numeroInterior" class="form-control" value="<?php echo $row2['numeroInterio'] ?>" >
                             </div>
-                            <input type="hidden" name="id" value="<?php echo $row['idEmpleado'] ?>" required="required">
+
+
+
+                            <input type="hidden" name="id" value="<?php echo $row['idProveedor'] ?>" required="required">
                             <input type="hidden" name="idDireccion" value="<?php echo $row2['idDireccion'] ?>" required="required">
 
                             <div class="form-group">

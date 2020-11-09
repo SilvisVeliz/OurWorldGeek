@@ -6,10 +6,8 @@
 
 <?php
 session_start();
-$host="localhost";
-$user="root";
-$pass="";
-$db="shoperiageek";
+
+include_once "conexion.php";
 $con=mysqli_connect($host,$user,$pass,$db);
 ?>
 <head>
@@ -41,7 +39,7 @@ $con=mysqli_connect($host,$user,$pass,$db);
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="index.html">
+                    <a href="index.php?modulo=principal">
                         <img class="align-content" src="./dashboard/elaadmin-master/images/logo.png" alt="">
                     </a>
                 </div>
@@ -55,7 +53,7 @@ $con=mysqli_connect($host,$user,$pass,$db);
                         $email=$_REQUEST['email']??'';
                         $password=$_REQUEST['password']??'';
                         $password=md5($password);
-                        include_once "conexion.php";
+
 
                         $query="SELECT idEmpleado,emailEmpleado,nombreEmpleado from empleado where emailEmpleado='".$email."' and passwordEmpleado='".$password."'";
                         $res=mysqli_query($con,$query);

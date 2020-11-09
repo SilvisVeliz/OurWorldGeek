@@ -100,9 +100,8 @@ $modulo=$_REQUEST['modulo']??'';
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Gráficos</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="dashboard.php?modulo=graficos">Gráficos</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="#">Gráfico flotante</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Gráfico de Peity</a></li>
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="dashboard.php?modulo=graficos">Resumen</a></li>
+
                         </ul>
                     </li>
 
@@ -115,7 +114,7 @@ $modulo=$_REQUEST['modulo']??'';
 
 
 
-                    <li class="menu-item-has-children dropdown">
+                    <!--<li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Componentes</a>
                         <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Bontones</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Tarjetas</a></li>
@@ -126,7 +125,7 @@ $modulo=$_REQUEST['modulo']??'';
                             <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
                             <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Tipografía</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Usuarios</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -138,6 +137,7 @@ $modulo=$_REQUEST['modulo']??'';
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Productos</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-shopping-bag"></i><a href="dashboard.php?modulo=productos">Productos</a></li>
+                            <li><i class="menu-icon fa fa-address-book-o"></i><a href="dashboard.php?modulo=proveedores">Proveedores</a></li>
 
                         </ul>
                     </li>
@@ -242,6 +242,15 @@ $modulo=$_REQUEST['modulo']??'';
             }
             if($modulo=="crearEmpleado"){
                 include_once "crearEmpleado.php";
+            }
+            if($modulo=="crearProveedor"){
+                include_once "crearProveedor.php";
+            }
+            if($modulo=="editarProveedor"){
+                include_once "editarProveedor.php";
+            }
+            if($modulo=="proveedores"){
+                include_once "proveedores.php";
             }
 
 

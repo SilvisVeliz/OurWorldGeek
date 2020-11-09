@@ -1,9 +1,6 @@
 <?php
 
-    $host="localhost";
-    $user="root";
-    $pass="";
-    $db="shoperiageek";
+
     include_once "conexion.php";
     $con=mysqli_connect($host,$user,$pass,$db);
 
@@ -45,8 +42,9 @@
                             <tr>
 
                                 <th>Nombre</th>
+                                <th>Apellido</th>
                                 <th>Email</th>
-                                <th>Password</th>
+                                <th>Telefono</th>
 
                                 <?php
                                 $id2=mysqli_real_escape_string($con, $_REQUEST['id']??'');
@@ -72,7 +70,7 @@
                             <tbody>
                             <?php
 
-                            $query="SELECT idCliente,nombreCliente,emailCliente,passwordCliente from cliente;  ";
+                            $query="SELECT idCliente,nombreCliente,emailCliente,passwordCliente,apellidoCliente,telefonoCliente from cliente;  ";
                             $res=mysqli_query($con,$query);
 
 
@@ -82,8 +80,9 @@
 
                             <tr>
                                 <th> <?php echo $row['nombreCliente']  ?> </th>
+                                <th> <?php echo $row['apellidoCliente']  ?> </th>
                                 <th> <?php echo $row['emailCliente']  ?> </th>
-                                <th> <?php echo $row['passwordCliente']  ?> </th>
+                                <th> <?php echo $row['telefonoCliente']  ?> </th>
 
 
                                 <?php

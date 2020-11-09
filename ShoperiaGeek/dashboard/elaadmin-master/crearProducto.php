@@ -1,8 +1,5 @@
 <?php
-$host="localhost";
-$user="root";
-$pass="";
-$db="shoperiageek";
+
 include_once "conexion.php";
 $con=mysqli_connect($host,$user,$pass,$db);
 
@@ -15,13 +12,20 @@ if(isset($_REQUEST['guardar'])){
     $descripcion=mysqli_real_escape_string($con,$_REQUEST['descripcion']??'');
     $franquicia=mysqli_real_escape_string($con,$_REQUEST['franquicia']??'');
     $categoria=mysqli_real_escape_string($con,$_REQUEST['categoria']??'');
+    $nombreProveedor=mysqli_real_escape_string($con,$_REQUEST['nombreProveedor']??'');
+    $idProveedor=mysqli_real_escape_string($con,$_REQUEST['idProveedor']??'');
 
+    $query2="SELECT nombreProveedor,idProveedor from proveedor where nombreProveedor='".$nombreProveedor."';
+    ";
+    $re2s=mysqli_query($con,$query2);
+    $row3=mysqli_fetch_assoc($re2s);
+    $idProveedor=$row3['idProveedor']??'';
 
 
 
     $query="INSERT INTO producto
-        (nombreProducto,precio,descripcion,franquicia,categoria) VALUES
-        ('".$nombre."','".$precio."','".$descripcion."','".$franquicia."','".$categoria."')";
+        (nombreProducto,precio,descripcion,franquicia,categoria,idProveedor) VALUES
+        ('".$nombre."','".$precio."','".$descripcion."','".$franquicia."','".$categoria."','".$idProveedor."')";
     $res=mysqli_query($con,$query);
 
     if($res){
@@ -38,7 +42,7 @@ if(isset($_REQUEST['guardar'])){
 
 
 }
-
+$queryNombreProveedores=mysqli_query($con,"SELECT idProveedor,nombreProveedor from proveedor;");
 ?>
 
 
@@ -75,8 +79,27 @@ if(isset($_REQUEST['guardar'])){
                                 <input type="text" name="categoria" class="form-control" required="required">
                             </div>
                             <div class="form-group">
+                                <label>Proveedor</label>
+                            </div>
+                            <div class="form-group">
+                                <select name="nombreProveedor">
+                                    <?php
+                                    while($nombreProveedores=mysqli_fetch_array($queryNombreProveedores)){
+
+                                        ?>
+                                        <option value="<?php echo $nombreProveedores['nombreProveedor'] ?>"><?php echo $nombreProveedores['nombreProveedor'] ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+
+
+
+                            <div class="form-group">
                                 <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
                             </div>
+
 
 
                         </form>

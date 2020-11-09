@@ -1,8 +1,5 @@
 <?php
-$host="localhost";
-$user="root";
-$pass="";
-$db="shoperiageek";
+
 include_once "conexion.php";
 $con=mysqli_connect($host,$user,$pass,$db);
 
@@ -16,18 +13,38 @@ if(isset($_REQUEST['guardar'])){
     $franquicia=mysqli_real_escape_string($con,$_REQUEST['franquicia']??'');
     $categoria=mysqli_real_escape_string($con,$_REQUEST['categoria']??'');
     $id=mysqli_real_escape_string($con,$_REQUEST['id']??'');
+    $nombreProveedor=mysqli_real_escape_string($con,$_REQUEST['nombreProveedor']??'');
 
 
 
 
+
+
+    $query2="SELECT nombreProveedor,idProveedor from proveedor where nombreProveedor='".$nombreProveedor."';
+    ";
+    $re2s=mysqli_query($con,$query2);
+    $row3=mysqli_fetch_assoc($re2s);
+    $idProveedorS=$row3['idProveedor']??'';
     $query="UPDATE producto SET
-        nombreProducto='".$nombre."',precio='".$precio."',descripcion='".$descripcion."',franquicia='".$franquicia."',categoria='".$categoria."' 
+        nombreProducto='".$nombre."',precio='".$precio."',descripcion='".$descripcion."',franquicia='".$franquicia."',categoria='".$categoria."', idProveedor='".$idProveedorS."'
         where idProducto='".$id."';
         ";
     $res=mysqli_query($con,$query);
 
+
     if($res){
-        echo '<meta http-equiv="refresh" content="0; url=dashboard.php?modulo=productos&mensaje=Producto '.$nombre.' editado exitosamente"/>';
+        if($re2s){
+            echo '<meta http-equiv="refresh" content="0; url=dashboard.php?modulo=productos&mensaje=Producto '.$nombre.' editado exitosamente"/>';
+        }else{
+            ?>
+
+            <div class="alert alert-danger role="alert>
+                Error al editar producto <?php echo mysqli_error($con);?>
+            </div>
+
+            <?php
+        }
+
     }else{
         ?>
 
@@ -42,6 +59,12 @@ $id=mysqli_real_escape_string($con, $_REQUEST['id']??'');
 $query="SELECT idProducto,nombreProducto,precio,descripcion,franquicia,categoria from producto where idProducto='".$id."'; ";
 $res=mysqli_query($con,$query);
 $row=mysqli_fetch_assoc($res);
+$query2="SELECT proveedor.idProveedor,proveedor.nombreProveedor from proveedor inner join producto on proveedor.idProveedor=producto.idProveedor where idProducto='".$id."'";
+$res2=mysqli_query($con,$query2);
+$row2=mysqli_fetch_assoc($res2);
+$queryNombreProveedores=mysqli_query($con,"SELECT idProveedor,nombreProveedor from proveedor;");
+
+
 
 ?>
 
@@ -78,7 +101,27 @@ $row=mysqli_fetch_assoc($res);
                                 <label>Categoria</label>
                                 <input type="text" name="categoria" class="form-control" value="<?php echo $row['categoria'] ?>" required="required">
                             </div>
+                            <div class="form-group">
+                                <label>Nombre Proveedor</label>
+                                <label type="text" class="form-control" required="required"><?php echo $row2['nombreProveedor'] ?>
+                            </div>
+                            <div class="form-group">
+                                    <select name="nombreProveedor">
+                                        <?php
+                                            while($nombreProveedores=mysqli_fetch_array($queryNombreProveedores)){
+
+                                            ?>
+                                                <option value="<?php echo $nombreProveedores['nombreProveedor'] ?>"><?php echo $nombreProveedores['nombreProveedor'] ?></option>
+                                        <?php
+                                            }
+                                        ?>
+                                    </select>
+                            </div>
+
+
+
                             <input type="hidden" name="id" value="<?php echo $row['idProducto'] ?>" required="required">
+                            <input type="hidden" name="idProveedor" value="<?php echo $row2['idProveedor'] ?>" required="required">
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>

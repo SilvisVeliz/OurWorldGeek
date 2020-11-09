@@ -1,8 +1,5 @@
 <?php
-$host="localhost";
-$user="root";
-$pass="";
-$db="shoperiageek";
+
 include_once "conexion.php";
 $con=mysqli_connect($host,$user,$pass,$db);
 
