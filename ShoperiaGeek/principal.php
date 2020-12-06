@@ -3,7 +3,7 @@
 include_once "conexion.php";
 $con=mysqli_connect($host,$user,$pass,$db);
 $query="SELECT 
-producto.idProducto, producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,imagen.direccionImagen, categoria.nombreCategoria 
+producto.idProducto,producto.idProducto, producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,imagen.direccionImagen, categoria.nombreCategoria 
 from producto 
 INNER JOIN producto_imagen ON producto_imagen.idProducto=producto.idProducto 
 INNER JOIN imagen ON imagen.idImagen=producto_imagen.idImagen
@@ -13,7 +13,7 @@ ORDER BY producto.idProducto DESC;";
 $res=mysqli_query($con,$query);
 
 $queryMasVendidos="SELECT 
-producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,imagen.direccionImagen, categoria.nombreCategoria, detallePedido.cantidadCompra
+producto.idProducto,producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,imagen.direccionImagen, categoria.nombreCategoria, detallePedido.cantidadCompra
 from producto 
 INNER JOIN producto_imagen ON producto_imagen.idProducto=producto.idProducto 
 INNER JOIN imagen ON imagen.idImagen=producto_imagen.idImagen
@@ -27,7 +27,7 @@ $queryCategorias="SELECT nombreCategoria from categoria;";
 $resCategorias=mysqli_query($con,$queryCategorias);
 
 $variableCategoriaAlAzar=random_int(1,3);
-$queryDeCategoriaAlAzar="SELECT categoria.idCategoria,producto.idProducto, producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,imagen.direccionImagen, categoria.nombreCategoria 
+$queryDeCategoriaAlAzar="SELECT producto.idProducto,categoria.idCategoria,producto.idProducto, producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,imagen.direccionImagen, categoria.nombreCategoria 
 from producto
 INNER JOIN producto_imagen ON producto_imagen.idProducto=producto.idProducto 
 INNER JOIN imagen ON imagen.idImagen=producto_imagen.idImagen
@@ -124,17 +124,11 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
 
                                         ?>
 
-                                        <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
+
                                         <div class="product-btns">
                                             <!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>-->
                                             <!--<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Vista rápida</span></button>
+                                            <a href="index.php?modulo=detalleProducto&id=<?php echo $row['idProducto'] ?>" class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp"> Vista rápida</span></a>
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
@@ -257,7 +251,7 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
                                             <div class="product-btns">
                                                 <!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>-->
                                                 <!--<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Vista rápida</span></button>
+                                                <a href="index.php?modulo=detalleProducto&id=<?php echo $row['idProducto'] ?>" class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp"> Vista rápida</span></a>
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
@@ -317,7 +311,7 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
                         <!-- product widget -->
                         <?php
                         $variableCategoriaWidget=$rowCategoria['nombreCategoria'];
-                        $queryCategoriaWidget="select producto.nombreProducto, producto.precioOriginal, producto.precioDescuento, categoria.nombreCategoria, imagen.direccionImagen 
+                        $queryCategoriaWidget="select producto.idProducto,producto.nombreProducto, producto.precioOriginal, producto.precioDescuento, categoria.nombreCategoria, imagen.direccionImagen 
                         from producto 
                         INNER JOIN categoria ON producto.idCategoria=categoria.idCategoria
                         INNER JOIN producto_imagen ON producto_imagen.idProducto=producto.idProducto 
@@ -341,7 +335,7 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
                             </div>
                             <div class="product-body">
                                 <p class="product-category"><?php echo $rowCategoriaWidget['nombreCategoria'];?></p>
-                                <h3 class="product-name"><a href="#"><?php echo $rowCategoriaWidget['nombreProducto'];?></a></h3>
+                                <h3 class="product-name"><a href="index.php?modulo=detalleProducto&id=<?php echo $rowCategoriaWidget['idProducto'] ?>"><?php echo $rowCategoriaWidget['nombreProducto'];?></a></h3>
 
                                 <?php
 
@@ -472,17 +466,11 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
 
                                             ?>
 
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
+
                                             <div class="product-btns">
                                                 <!--<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>-->
                                                 <!--<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>-->
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Vista rápida</span></button>
+                                                <a href="index.php?modulo=detalleProducto&id=<?php echo $row['idProducto'] ?>" class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp"> Vista rápida</span></a>
                                             </div>
                                         </div>
                                         <div class="add-to-cart">

@@ -6,7 +6,8 @@
         $where=" where 1=1 and nombreProducto like '%".$nombreProducto."%'";
     }
 
-    $queryCuenta="SELECT COUNT(*) as cuenta from producto $where ;";
+    $queryCuenta="SELECT COUNT(*) as cuenta from producto INNER JOIN producto_imagen ON producto_imagen.idProducto=producto.idProducto 
+    INNER JOIN imagen ON imagen.idImagen=producto_imagen.idImagen $where ;";
     $resCuenta=mysqli_query($con,$queryCuenta);
     $rowCuenta=mysqli_fetch_assoc($resCuenta);
     $totalRegistros=$rowCuenta['cuenta'];
@@ -36,7 +37,7 @@
 
 
     ?>
-
+<br>
     <div class="row col-sm-12" align="center">
     <?php
     while($row=mysqli_fetch_assoc($res)){
