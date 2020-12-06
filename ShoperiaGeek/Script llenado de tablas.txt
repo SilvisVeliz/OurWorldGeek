@@ -1,44 +1,44 @@
-INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (1,"Last Level","info@lastlevel.es",34954368866,2);
-INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (2,"Geek Corner","contacto@geekcorner.mx",2228895097,3);
+INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (1,"Last Level","info@lastlevel.es",34954368866,1);
+INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (2,"Geek Corner","contacto@geekcorner.mx",2228895097,2);
 INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (3,"SuperGeek","mayoreo@supergeek.com.mx",2228895097,3);
 
-INSERT INTO `empleado`(`idEmpleado`, `nombreEmpleado`, `apellidoEmpleado`, `emailEmpleado`, `telefonoempleado`, `acceso`, `Suledo`, `passwordEmpleado`, `idDireccion`)
-	VALUES (1,"Eleazar","Palacios","ElePala90@gmail.com",4567890321,"Administrador",8900,"fe196833cc573a26b141ff1d2a35c9ae",19);
-INSERT INTO `empleado`(`idEmpleado`, `nombreEmpleado`, `apellidoEmpleado`, `emailEmpleado`, `telefonoempleado`, `acceso`, `Suledo`, `passwordEmpleado`, `idDireccion`)
-	VALUES (2,"Ana Lizbeth","Covarrubias","AnaLiz91@gmail.com",4669871430,"Vendedor",5670,"028d8b722c6b3ccc786f774b402e30c8",20);
-INSERT INTO `empleado`(`idEmpleado`, `nombreEmpleado`, `apellidoEmpleado`, `emailEmpleado`, `telefonoempleado`, `acceso`, `Suledo`, `passwordEmpleado`, `idDireccion`)
-	VALUES (3,"Gerardo","Montañez","GeraMon92@gmail.com",3215678904,"Vendedor",5670,"29f91d161732d4da03314773209c79f6",21);
+INSERT INTO `empleado`(`idEmpleado`, `nombreEmpleado`, `apellidoEmpleado`, `emailEmpleado`, `telefonoempleado`, `acceso`, `Suledo`, `passwordEmpleado`, `idDireccion`, `idImagen`)
+	VALUES (1,"Eleazar","Palacios","ElePala90@gmail.com",4567890321,"Administrador",8900,"fe196833cc573a26b141ff1d2a35c9ae",19,1);
+INSERT INTO `empleado`(`idEmpleado`, `nombreEmpleado`, `apellidoEmpleado`, `emailEmpleado`, `telefonoempleado`, `acceso`, `Suledo`, `passwordEmpleado`, `idDireccion`, `idImagen`)
+	VALUES (2,"Ana Lizbeth","Covarrubias","AnaLiz91@gmail.com",4669871430,"Vendedor",5670,"028d8b722c6b3ccc786f774b402e30c8",20,2);
+INSERT INTO `empleado`(`idEmpleado`, `nombreEmpleado`, `apellidoEmpleado`, `emailEmpleado`, `telefonoempleado`, `acceso`, `Suledo`, `passwordEmpleado`, `idDireccion`,`idImagen`)
+	VALUES (3,"Gerardo","Montañez","GeraMon92@gmail.com",3215678904,"Vendedor",5670,"29f91d161732d4da03314773209c79f6",21,3);
 
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (1,"Rosalia","Manriquez","RosaMan132@gmail.com",5590875634,4,"700ab2794a2699c28cb3b5955f40ef83");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (2,"Maria Josefa","Saiz","MaJoSa@outlook.com",2229087564,5,"31928f9655c1db0bb28ca7db77341237");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`) 
-	VALUES (3,"Axel","Quintero","Axelito23@gmail.com",6798234019,6,"b9c91ac2d8398eb00af4e165cbf251fd");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (4,"Isidro","Martinez","ILYisi0@hotmail.com",5634243091,7,"0ee19b7f9245b22d0cac71378f11afab");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (5,"Palmira","Alegre","AlePal009@gmail.com",6344657893,8,"de2a196cb812ef8abdb8f168dc2542c8");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (6,"Xenia de Miguel","Anguiano","XeniaAnguiano2001@yahoo.com",9086740581,9,"eaf9d75b284899052f06020cd02abf71");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (7,"Ruth","Rivero","RRUItv1@gmail.com",5590091634,10,"e4507bfbb85ab8ff5e22c1ac8923fba7");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (8,"Maria Victoria","Ojeda","MVO@hotmail.com",4491234567,11,"839c33f02c40067ed1bcd1da7381a7b7");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (9,"Faustino","Vazquez","VazFa90@gmail.com",6349087124,12,"6e062cc764217b45142eb3a4f97677ba");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (10,"Yurena","Arias","yureyure2@gmail.com",1209768542,13,"2b637a75e5d51d4e81c2d6e17d56955f");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (11,"Carmen","Tudelo","tudelitok@hotmail.com",3349053894,14,"2b637a75e5d51d4e81c2d6e17d56955f");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (12,"Laura","Perdomo","lauraperdom0@gmail.com",5545907612,15,"2b637a75e5d51d4e81c2d6e17d56955f");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (13,"Amanda Rosal","Palacios","amandarosalpala@hotmail.com",7074041532,16,"cb1603a5b22dd6823a3e42c6896140be");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (14,"Alexandru","Ares","aares@outlook.com",6098763450,17,"dfa6e19ce3d4e024f87eeb77c7e909dc");
-INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`)
-	VALUES (15,"Miquel","Lloret","Loraloramiq@gmail.com",4460981238,18,"e743d0d097d5047f21b1020ef93dec9c");
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (1,"Rosalia","Manriquez","RosaMan132@gmail.com",5590875634,4,"700ab2794a2699c28cb3b5955f40ef83",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`,`idImagen`)
+	VALUES (2,"Maria Josefa","Saiz","MaJoSa@outlook.com",2229087564,5,"31928f9655c1db0bb28ca7db77341237",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`) 
+	VALUES (3,"Axel","Quintero","Axelito23@gmail.com",6798234019,6,"b9c91ac2d8398eb00af4e165cbf251fd",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (4,"Isidro","Martinez","ILYisi0@hotmail.com",5634243091,7,"0ee19b7f9245b22d0cac71378f11afab",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (5,"Palmira","Alegre","AlePal009@gmail.com",6344657893,8,"de2a196cb812ef8abdb8f168dc2542c8",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (6,"Xenia de Miguel","Anguiano","XeniaAnguiano2001@yahoo.com",9086740581,9,"eaf9d75b284899052f06020cd02abf71",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (7,"Ruth","Rivero","RRUItv1@gmail.com",5590091634,10,"e4507bfbb85ab8ff5e22c1ac8923fba7",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (8,"Maria Victoria","Ojeda","MVO@hotmail.com",4491234567,11,"839c33f02c40067ed1bcd1da7381a7b7",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (9,"Faustino","Vazquez","VazFa90@gmail.com",6349087124,12,"6e062cc764217b45142eb3a4f97677ba",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (10,"Yurena","Arias","yureyure2@gmail.com",1209768542,13,"2b637a75e5d51d4e81c2d6e17d56955f",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (11,"Carmen","Tudelo","tudelitok@hotmail.com",3349053894,14,"2b637a75e5d51d4e81c2d6e17d56955f",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (12,"Laura","Perdomo","lauraperdom0@gmail.com",5545907612,15,"2b637a75e5d51d4e81c2d6e17d56955f",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (13,"Amanda Rosal","Palacios","amandarosalpala@hotmail.com",7074041532,16,"cb1603a5b22dd6823a3e42c6896140be",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (14,"Alexandru","Ares","aares@outlook.com",6098763450,17,"dfa6e19ce3d4e024f87eeb77c7e909dc",1);
+INSERT INTO `cliente`(`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`,`idDireccion`, `passwordCliente`, `idImagen`)
+	VALUES (15,"Miquel","Lloret","Loraloramiq@gmail.com",4460981238,18,"e743d0d097d5047f21b1020ef93dec9c",1);
 
 INSERT INTO `direccion`(`idDireccion`, `calle`, `colonia`, `codigoPostal`, `Estado`, `numeroInterio`, `numeroExterior`) VALUES (1, "Destornillador Nave","Pol Store",41008,"Aguascalientes",2,5);
 INSERT INTO `direccion`(`idDireccion`, `calle`, `colonia`, `codigoPostal`, `Estado`, `numeroInterio`, `numeroExterior`) VALUES (2, "31Pte juarez","Colonia Esmeralda",72400,"Aguascalientes",3528,2);
@@ -63,46 +63,67 @@ INSERT INTO `direccion`(`idDireccion`, `calle`, `colonia`, `codigoPostal`, `Esta
 INSERT INTO `direccion`(`idDireccion`, `calle`, `colonia`, `codigoPostal`, `Estado`, `numeroInterio`, `numeroExterior`) VALUES (21, "palomito viajero","sierra madre",90832,"Yucatan",233,1);
 
 
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (1,"camiseta The Warriors grupo L",220,"camiseta tamaño L","The Warriors","camisetas de cine",1);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (2,"camiseta The Warriors grupo M",220,"camiseta tamaño M","The Warriors","camisetas de cine",1);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (3,"camiseta The Warriors grupo S",220,"camiseta tamaño S","The Warriors","camisetas de cine",1);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (4,"camiseta el Padrino L",349,"camisa tamaño L","EL padrino","camisetas de cine",1);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (5,"camiseta el Padrino S",349,"camisa tamaño S","EL padrino","camisetas de cine",1);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (6,"camiseta La Chaqueta Metalica XXL",599,"camiseta tamaño XXL","Metalica","camisetas de cine",1);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (7,"camiseta La Chaqueta Metalica XL",599,"camiseta tamaño XL","Metalica","camisetas de cine",1);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (8,"figura deus ex mankind divided 30 cm",499,"figura de 30 cm","deus","catalogo gaya",3);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (9,"taza crusader kings",239,"taza adornada","crusader kings","catalogo gaya",3);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (10,"taza city skylines",199,"taza","city skylines","catalogo gaya",3);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (11,"figura pop Dune: Lady Jessica",699,"figura Dune","Dune","figuras cine",2);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (12,"figura pop Dune: Duncan Idaho",899,"figura Dune","Dune","figuras cine",2);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (13,"figura porp Dune: Duke Leto",700,"figura dune","Dune","figuras cine",2);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (14,"figura porp Dune: Baron Karkonnen",759,"figura dune","Dune","figuras cine",2);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (15,"figura qposket kimetsu no yaiba Tanjiro",499,"figura Tanjiro 14 cm","qposket","figuras manga",2);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (16,"figura banpresto Saint Seiya Memoir Shiryu",439,"figura banpresto 16 cm","Banpresto","figuras manga",2);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (17,"figura qposket kimetsu no yaiba Vib Nezuko",499,"figura Vib Nezuko 12 cm","qposket","figuras manga",2);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (18,"figura Banpresto One Piece Luffy Worst",899,"figura One piece 13 cm","Banpresto","figuras manga",2);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (19,"Display mazos star realms colony wars",199,"juego de cartas 6pz","colony wars","juegos de cartas",3);
-INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precio`, `descripcion`, `franquicia`, `categoria`, `idProveedor`)
-	VALUES (20,"gorra Hora de Aventura",199,"gorra","Hora de Aventura","Caricaturas",1);
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (1,"The Warriors");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (2,"El Padrino");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (3,"Metalica");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (4,"deus");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (5,"Crusader kings");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (6,"City skylines");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (7,"Dune");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (8,"qposket");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (9,"Banpresto");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (10,"Colony Wars");
+INSERT INTO `franquicia`(`idFranquicia`,`nombreFranquicia`) VALUES (11,"Hora de Aventura");
+
+INSERT INTO `categoria`(`idCategoria`,`nombreCategoria`) VALUES (1,"camisetas de cine");
+INSERT INTO `categoria`(`idCategoria`,`nombreCategoria`) VALUES (2,"catalogo gaya");
+INSERT INTO `categoria`(`idCategoria`,`nombreCategoria`) VALUES (3,"figuras cine");
+INSERT INTO `categoria`(`idCategoria`,`nombreCategoria`) VALUES (4,"figuras manga");
+INSERT INTO `categoria`(`idCategoria`,`nombreCategoria`) VALUES (5,"juegos de cartas");
+INSERT INTO `categoria`(`idCategoria`,`nombreCategoria`) VALUES (6,"caricaturas");
+
+
+
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (1,"camiseta The Warriors grupo L",220,200,"camiseta tamaño L",1,1,1);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (2,"camiseta The Warriors grupo M",220,0,"camiseta tamaño M",1,1,1);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (3,"camiseta The Warriors grupo S",220,0,"camiseta tamaño S",1,1,1);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (4,"camiseta el Padrino L",349,0,"camisa tamaño L",2,1,1);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (5,"camiseta el Padrino S",349,0,"camisa tamaño S",2,1,1);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (6,"camiseta La Chaqueta Metalica XXL",599,0,"camiseta tamaño XXL",3,1,1);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (7,"camiseta La Chaqueta Metalica XL",599,0,"camiseta tamaño XL",3,1,1);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (8,"figura deus ex mankind divided 30 cm",499,0,"figura de 30 cm",4,2,3);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (9,"taza crusader kings",239,0,"taza adornada",5,2,3);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (10,"taza city skylines",199,0,"taza",6,2,3);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (11,"figura pop Dune: Lady Jessica",699,0,"figura Dune",7,3,2);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (12,"figura pop Dune: Duncan Idaho",899,0,"figura Dune",7,3,2);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (13,"figura porp Dune: Duke Leto",700,0,"figura dune",7,3,2);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (14,"figura porp Dune: Baron Karkonnen",759,0,"figura dune",7,3,2);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (15,"figura qposket kimetsu no yaiba Tanjiro",499,0,"figura Tanjiro 14 cm",8,4,2);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (16,"figura banpresto Saint Seiya Memoir Shiryu",439,0,"figura banpresto 16 cm",9,4,2);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (17,"figura qposket kimetsu no yaiba Vib Nezuko",499,0,"figura Vib Nezuko 12 cm",8,4,2);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (18,"figura Banpresto One Piece Luffy Worst",899,0,"figura One piece 13 cm",9,4,2);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (19,"Display mazos star realms colony wars",199,0,"juego de cartas 6pz",10,5,3);
+INSERT INTO `producto`(`idProducto`, `nombreProducto`, `precioOriginal`,`precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`)
+	VALUES (20,"gorra Hora de Aventura",199,0,"gorra",11,6,1);
 
 INSERT INTO `inventario`(`idProducto`, `cantidadInventario`) VALUES (1,900);
 INSERT INTO `inventario`(`idProducto`, `cantidadInventario`) VALUES (2,512);
@@ -143,40 +164,44 @@ INSERT INTO `comentario`(`idComentario`, `idCliente`, `idProducto`, `Comentario`
 INSERT INTO `comentario`(`idComentario`, `idCliente`, `idProducto`, `Comentario`) VALUES (17,12,19,"Muy completas las cartas, divertido.");
 INSERT INTO `comentario`(`idComentario`, `idCliente`, `idProducto`, `Comentario`) VALUES (18,13,9,"Muy bonita taza, sirve de adorno, muy amplia y cabe suficiente");
 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (1,15,'2020-08-16',439);  
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (2,1,'2019-09-07',349); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (3,11,'2020-01-09',659); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (4,6,'2020-12-10',599); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (5,9,'2020-05-10',899); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (6,2,'2020-11-01',899); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (7,4,'2020-08-13',699); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (8,7,'2020-07-19',499); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (9,14,'2020-10-06',819); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (10,3,'2020-09-13',349); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (11,5,'2020-09-16',199); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (12,8,'2020-05-05',700); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (13,13,'2020-06-12',838); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (14,10,'2020-04-08',700); 
-INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (15,12,'2020-03-13',199);  
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (1,15,'2020-08-16',439,1);  
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (2,1,'2019-09-07',349,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (3,11,'2020-01-09',659,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (4,6,'2020-12-10',599,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (5,9,'2020-05-10',899,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (6,2,'2020-11-01',899,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (7,4,'2020-08-13',699,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (8,7,'2020-07-19',499,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (9,14,'2020-10-06',819,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (10,3,'2020-09-13',349,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (11,5,'2020-09-16',199,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (12,8,'2020-05-05',700,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (13,13,'2020-06-12',838,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (14,10,'2020-04-08',700,1); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (15,12,'2020-03-13',199,2);  
 
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (1,16,439);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (2,5,349);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (3,13,220);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (3,16,439);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (4,7,599);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (5,12,899);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (6,12,899);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (7,11,699);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (8,8,499);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (9,3,220);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (9,6,599);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (10,5,349);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (11,20,199);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (12,13,700);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (13,6,599);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (13,9,239);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (14,13,700);
-INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (15,9,199);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (1,16,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (2,5,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (3,13,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (3,16,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (4,7,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (5,12,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (6,12,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (7,11,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (8,8,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (9,3,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (9,6,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (10,5,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (11,20,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (12,13,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (13,6,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (13,9,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (14,13,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (15,9,1);
+
+INSERT INTO `metodopago`(`idMetodo`, `nombreMetodo`) VALUES (1,"PayPal");
+INSERT INTO `metodopago`(`idMetodo`, `nombreMetodo`) VALUES (2,"Tarjeta de Credito");
+
 
 INSERT INTO `factura`(`idFactura`, `fechaFactura`, `idCliente`, `idProducto`, `idDireccion`, `metodoPago`, `cantidadProducto`, `totalPago`) 
 	VALUES (1,'2020-08-16',15,16,18,"Crédito",439,439);

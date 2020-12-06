@@ -94,7 +94,7 @@ CREATE TABLE `empleado` (
   `acceso` varchar(20) NOT NULL,
   `Suledo` decimal(10,0) NOT NULL,
   `imagenEmpleado` blob NOT NULL,
-  `idDireccion` int(100) NOT NULL
+  `idDireccion` int(100) NOT NULL,
   `passwordEmpleado` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

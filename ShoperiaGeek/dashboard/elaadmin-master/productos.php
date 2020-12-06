@@ -71,7 +71,7 @@ if(isset($_REQUEST['idBorrar'])){
                             <tbody>
                             <?php
 
-                            $query="SELECT idProducto,nombreProducto,precio,descripcion,franquicia,categoria from producto;  ";
+                            $query="SELECT producto.idProducto,producto.nombreProducto,producto.precioOriginal,producto.descripcion,categoria.nombreCategoria,franquicia.nombreFranquicia from producto INNER JOIN categoria ON categoria.idCategoria=producto.idCategoria INNER JOIN franquicia ON franquicia.idFranquicia=producto.idFranquicia";
                             $res=mysqli_query($con,$query);
 
 
@@ -81,10 +81,10 @@ if(isset($_REQUEST['idBorrar'])){
 
                                 <tr>
                                     <th> <?php echo $row['nombreProducto']  ?> </th>
-                                    <th> <?php echo $row['precio']  ?> </th>
+                                    <th> <?php echo $row['precioOriginal']  ?> </th>
                                     <th> <?php echo $row['descripcion']  ?> </th>
-                                    <th> <?php echo $row['franquicia']  ?> </th>
-                                    <th> <?php echo $row['categoria']  ?> </th>
+                                    <th> <?php echo $row['nombreFranquicia']  ?> </th>
+                                    <th> <?php echo $row['nombreCategoria']  ?> </th>
 
                                     <?php
                                     $id1=mysqli_real_escape_string($con, $_REQUEST['id']??'');

@@ -207,7 +207,7 @@ $modulo=$_REQUEST['modulo']??'';
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
+								<form action="index.php">
 									<select class="input-select">
 										<option value="0">Categorias</option>
 										<option value="1">Ropa</option>
@@ -215,8 +215,9 @@ $modulo=$_REQUEST['modulo']??'';
 										<option value="1">Figuras</option>
 										<option value="1">Accesorios</option>
 									</select>
-									<input class="input" placeholder="Buscar...">
-									<button class="search-btn">Buscar</button>
+									<input class="input" placeholder="Buscar..." name="nombreProducto" value="<?php echo $_REQUEST['nombreProducto']??''?>">
+									<input type="hidden" name="modulo" value="todosProductos">
+                                    <button class="search-btn">Buscar</button>
 								</form>
 							</div>
 						</div>
@@ -307,12 +308,11 @@ $modulo=$_REQUEST['modulo']??'';
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
 						<li class="active"><a href="index.php?modulo=principal">Inicio</a></li>
+                        <li><a href="index.php?modulo=todosProductos">Todos los productos</a></li>
 						<li><a href="#NuevosProductos">Lo más nuevo</a></li>
 						<li><a href="#MasVendido">Lo más vendido</a></li>
-						<li><a href="#Ropa">Ropa</a></li>
-						<li><a href="#Juegos">Juegos</a></li>
-						<li><a href="#Figuras">Figuras</a></li>
-						<li><a href="#Accesorios">Accesorios</a></li>
+						<li><a href="#Categorias">Categorias</a></li>
+
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -330,6 +330,14 @@ $modulo=$_REQUEST['modulo']??'';
             if($modulo=="editarPerfil"){
                 include_once "editarPerfil.php";
             }
+
+            if($modulo=="todosProductos"){
+                include_once "todosProductos.php";
+            }
+            if($modulo=="detalleProducto"){
+                include_once "detalleProducto.php";
+            }
+
         ?>
 
 
@@ -404,13 +412,13 @@ $modulo=$_REQUEST['modulo']??'';
 
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">Categorias</h3>
+								<h3 class="footer-title">Secciones</h3>
 								<ul class="footer-links">
-									<li><a href="#">Lo más vendido</a></li>
-									<li><a href="#">Ropa</a></li>
-									<li><a href="#">Juegos</a></li>
-									<li><a href="#">Figuras</a></li>
-									<li><a href="#">Accesorios</a></li>
+                                    <li><a href="index.php?modulo=principal">Inicio</a></li>
+									<li><a href="#MasVendido">Lo más vendido</a></li>
+									<li><a href="#NuevosProductos">Lo más nuevo</a></li>
+									<li><a href="#Categorias">Categorias</a></li>
+
 								</ul>
 							</div>
 						</div>
