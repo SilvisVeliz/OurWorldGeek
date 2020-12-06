@@ -112,6 +112,38 @@ if(isset($_REQUEST['idBorrar'])){
                             ?>
                             </tbody>
                         </table>
+                        <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                <tr>
+                    <td>id</td>
+                    <td>idProducto</td>
+                    <td>fecha</td>
+                    <td>responsable</td>
+                    <td>actividad realizada</td>
+                    <td>informacion actual</td>
+                    <td>informacion anterior</td>
+                </tr>
+
+                <?php
+                $query="SELECT * from bitacoraproducto";
+                $res=mysqli_query($con,$query);
+
+
+                while($row=mysqli_fetch_assoc($res)){
+                ?>
+
+                <tr>
+                    <td><?php echo $row['idBitacoraProducto']  ?></td>
+                    <td><?php echo $row['idProducto']  ?></td>
+                    <td><?php echo $row['fecha']  ?></td>
+                    <td><?php echo $row['responsable']  ?></td>
+                    <td><?php echo $row['actividad_realizada']  ?></td>
+                    <td><?php echo $row['informacion_actual']  ?></td>
+                    <td><?php echo $row['informacion_actual']  ?></td>
+                </tr>
+                <?php
+                }
+                ?>    
+            </table>
                     </div>
                 </div>
             </div>
