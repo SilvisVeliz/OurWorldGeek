@@ -245,6 +245,67 @@ INSERT INTO `factura`(`idFactura`, `fechaFactura`, `idCliente`, `idProducto`, `i
 	VALUES (17,'2020-04-08',10,13,13,"Crédito",700,700);
 INSERT INTO `factura`(`idFactura`, `fechaFactura`, `idCliente`, `idProducto`, `idDireccion`, `metodoPago`, `cantidadProducto`, `totalPago`) 
 	VALUES (18,'2020-03-13',12,9,15,"Crédito",199,199);
+
 INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (16,20,1);
 INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (17,2,1); 
 INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (18,18,1);
+
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (4,"camisaWarriorsL",200,"./img/theWarriors_cinePlayeraL.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (5,"camisaWarriorsM",200,"./img/theWarriors_cinePlayeraM.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (6,"camisaWarriorsS",200,"./img/theWarriors_cinePlayeraS.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (7,"camisaPadrinoL",200,"./img/elPadrino_cinePlayeraL.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (8,"camisaPadrinoS",200,"./img/elPadrino_cinePlayeraS.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (9,"camisetoMetalXXL",200,"./img/laChaquetaMetalica_cinePlayeraXXL.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (10,"camisaMetalXL",200,"./img/laChaquetaMetalica_cinePlayeraXL.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (11,"figuraDeus",200,"./img/ProductosdeDeus.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (12,"tazaCKings",200,"./img/tazacrusaderskings.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (13,"tazaCSkylines",200,"./img/skylines.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (14,"figuraLadyJessica",200,"./img/product19figuraAkizukiKC.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (15,"figuraDuncanIdaho",200,"./img/product21figuraCapitanJamesTStarTrek.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (16,"figuraDukeLeto",200,"./img/figurabanpresto_SaintSeiyaM.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (17,"figuraBaronKarkon",200,"./img/funko-star-wars-pop-the-mandalorian-cara-dune.jpg");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (18,"figuraTanjiro",200,"./img/shopFiguraR2D2C3P0.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (19,"figuraBanpresto",200,"./img/product20figuraKenStreetFighter.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (20,"figuraNezuko",200,"./img/png-clipart-r2-d2-c-3po-chewbacca-droid-sideshow-collectibles-star-wars-star-wars-episode-vii-metal.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (21,"figuraOnePiece",200,"./img/product17figuraZoroOP.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (22,"juegoCartas",200,"./img/product13juegoMesaResidentEvil.png");
+INSERT INTO `imagen`(`idImagen`, `nombreImagen`, `tamaÃ±oImagen`, `direccionImagen`) VALUES (23,"gorraHoraAventura",200,"./img/Gorra-hora-de-aventura-jake-S.jpg");
+
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (4,1);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (5,2);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (6,3);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (7,4);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (8,5);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (9,6);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (10,7);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (11,8);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (12,9);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (13,10);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (14,11);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (15,12);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (16,13);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (17,14);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (18,15);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (19,16);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (20,17);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (21,18);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (22,19);
+INSERT INTO `producto_imagen`(`idImagen`, `IdProducto`) VALUES (23,20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
