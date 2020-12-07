@@ -1,19 +1,18 @@
- 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Preguntas Frecuentes</title>
+  <style type="text/css">
+        h3 {text-align: center}
+        p {text-align: justify}
+        
+    </style>
+</head>
+
 
 <?php
 session_start();
-
-
-
-
-
-
-
-
-
-
 $modulo=$_REQUEST['modulo']??'';
 
 
@@ -170,7 +169,6 @@ $modulo=$_REQUEST['modulo']??'';
                                                  ?>
                                                 <div class="user-area  float-right">
                                                 <a href="panel.php"  aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-o"></i>Logearse</a>
-                                                <a href="index.php?modulo=registrarse"  aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-o"></i>Registrarse</a>
                                                 <?php
                                             }
                                     }
@@ -216,16 +214,16 @@ $modulo=$_REQUEST['modulo']??'';
 						<!-- /LOGO -->
 
 						<!-- SEARCH BAR -->
-						<div class="col-md-6" align="center">
+						<div class="col-md-6">
 							<div class="header-search">
 								<form action="index.php">
-                                    <!--<select class="input-select" >
-										<option value="0">figuras manga</option>
+									<select class="input-select">
+										<option value="0">Categorias</option>
 										<option value="1">Ropa</option>
 										<option value="1">Juegos</option>
 										<option value="1">Figuras</option>
 										<option value="1">Accesorios</option>
-									</select>-->
+									</select>
 									<input class="input" placeholder="Buscar..." name="nombreProducto" value="<?php echo $_REQUEST['nombreProducto']??''?>">
 									<input type="hidden" name="modulo" value="todosProductos">
                                     <button class="search-btn">Buscar</button>
@@ -248,30 +246,45 @@ $modulo=$_REQUEST['modulo']??'';
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
-
-
-
-
-
 								<div class="dropdown">
-
-									<a class="dropdown-toggle" data-toggle="dropdown">
-										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                            <span class="badge badge-danger navgar-badge" id="badgeProducto"></span>
-                                        <div class="qty"></div>
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Carrito</span>
+										<div class="qty">3</div>
 									</a>
-									<div class="cart-dropdown" id="listaCarrito">
+									<div class="cart-dropdown">
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/producto-RiskGOT.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">Risk Edición Game of Thrones</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>$1300.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
 
-                                        <div class="cart-summary">
-                                            <small>4 articulos seleccionados</small>
-                                            <h5>SUBTOTAL: $4240.00</h5>
-                                        </div>
-                                        <div class="cart-btns">
-                                            <a href="#">Ver carro</a>
-                                            <a href="#">Pagar  <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/star-wars-episode-iv-replica-11-casco-de-stormtrooper-accessory-ver-55712-1.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">Casco de Stormtrooper</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+										</div>
+										<div class="cart-summary">
+											<small>4 articulos seleccionados</small>
+											<h5>SUBTOTAL: $4240.00</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="#">Ver carro</a>
+											<a href="#">Pagar  <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
 									</div>
-
 								</div>
 								<!-- /Cart -->
 
@@ -293,59 +306,38 @@ $modulo=$_REQUEST['modulo']??'';
 			</div>
 			<!-- /MAIN HEADER -->
 		</header>
-		<!-- /HEADER -->
+        <!-- /HEADER -->
+        <br>
 
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="index.php?modulo=principal">Inicio</a></li>
-                        <li><a href="index.php?modulo=todosProductos">Todos los productos</a></li>
+                                </br>
+                                    <div>
+                                        <h3>Preguntas Frecuentes</h3>
+                                    </div>
+                                    <h4>¿Quiénes somos?</h4>
+                                        <p>Somos una PYME 100% Mexicana comprometida con ofrecer los mejores productos
+                                             y el mejor servicio a todos nuestros clientes con servicio Platinum en 
+                                             cualquiera de nuestros paquetes. </p>
+                                             <h4>¿Cómo me aseguro que los productos son de calidad?</h4>
+                                             <p>Sabemos lo importante que es para ti comprar de manera segura por lo que todos nuestros productos 
+                                                 son sometidos a control de calidad y ofrecemos 30 días de garantía directamente con nosotros.</p>
+                                                 <h4>¿Tienen tienda física?</h4>
+                                                 <p>No contamos con tienda física, ya ves que luego llegan pandemias y cierran todo, 
+                                                      pero no te preocupes, te ahorramos pasaje, gasolina y mandamos tu producto a cualquier parte de México 
+                                                      (y del mundo si es el caso), directo a la puerta de tu casa 👾</p>
+                                                      <h4>¿Cuánto tardará en llegar mi producto?</4> 
+                                                      <p>El paquete debe llegarte de 3 a 8 días hábiles, dependiendo el lugar en el que te encuentres.🚀</p>
+                                                      <h4>¿Y si no me llega mi paquete en el tiempo?</4>
+                                                    <p>En el momento en que realizas tu compra, realizamos tu envío. 
+                                                        Desde ese punto dependemos de las paqueterías, que no deben tardar más del tiempo estipulado. 
+                                                        Para revisar el estado de tu envío debes entrar a la página de rastreo y tener a la mano tu número de guía.</p>
+                                                        <h4>¿Qué hago si mi producto llegó dañado o roto?</h4>
+                                                        <p>Sabemos lo importante que es para ti comprar de manera segura por lo que todos nuestros productos son sometidos a control de calidad y 
+                                                            ofrecemos 15 días de garantía directamente con nosotros, sólo ponte en contacto con nosotros.</p>
+                                                            <p>Los cambios y devoluciones sólo se pueden realizar dentro del límite de tiempo establecido. 
+                                                                Los productos no deben presentar uso por parte del cliente y se debe enviar evidencia fotográfica o de video para confirmar el defecto. </p>
+                                    
 
-
-					</ul>
-					<!-- /NAV -->
-				</div>
-				<!-- /responsive-nav -->
-			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
-
-        <?php
-            if($modulo=="principal" || $modulo==""){
-                include_once "principal.php";
-            }
-
-            if($modulo=="editarPerfil"){
-                include_once "editarPerfil.php";
-            }
-
-            if($modulo=="todosProductos"){
-                include_once "todosProductos.php";
-            }
-            if($modulo=="detalleProducto"){
-                include_once "detalleProducto.php";
-            }
-            if($modulo=="registrarse"){
-                include_once "registrarse.php";
-            }
-
-        ?>
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
@@ -365,17 +357,11 @@ $modulo=$_REQUEST['modulo']??'';
 								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Suscribirte</button>
 							</form>
 							<ul class="newsletter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
+                            <li>
+									<a href="https://web.facebook.com/ShoperiaGeek-108307207807380"><i class="fa fa-facebook"></i></a>
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
+									<a href="https://instagram.com/shoperiageek12?igshid=1fzhzegn1fydy"><i class="fa fa-instagram"></i></a>
 								</li>
 							</ul>
 						</div>
@@ -412,9 +398,9 @@ $modulo=$_REQUEST['modulo']??'';
 								<h3 class="footer-title">Secciones</h3>
 								<ul class="footer-links">
                                     <li><a href="index.php?modulo=principal">Inicio</a></li>
-									<li><a href="index.php?modulo=principal#MasVendido">Lo más vendido</a></li>
-									<li><a href="index.php?modulo=principal#NuevosProductos">Lo más nuevo</a></li>
-									<li><a href="index.php?modulo=principal#Categorias">Categorias</a></li>
+									<li><a href="#MasVendido">Lo más vendido</a></li>
+									<li><a href="#NuevosProductos">Lo más nuevo</a></li>
+									<li><a href="#Categorias">Categorias</a></li>
 
 								</ul>
 							</div>
@@ -426,11 +412,11 @@ $modulo=$_REQUEST['modulo']??'';
 							<div class="footer">
 								<h3 class="footer-title">Información</h3>
 								<ul class="footer-links">
-								<li><a href="quienessomos.php">Sobre nosotros</a></li>
+                                <li><a href="quienessomos.php">Sobre nosotros</a></li>
 									<li><a href="politicas.php">Politicas de privacidad</a></li>
 									<li><a href="devoluciones.php">Devoluciones y Cancelaciones</a></li>
 									<li><a href="terminos.php">Términos y condiciones</a></li>
-									<li><a href="preguntas.php">Preguntas Frecuentes</a></li>
+									<li><a href="preguntas.php">Prguntas Frecuentes</a></li>
 								</ul>
 							</div>
 						</div>
@@ -489,7 +475,6 @@ $modulo=$_REQUEST['modulo']??'';
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
-        <script src="js/ecommerce.js"></script>
 
 	</body>
 </html>
