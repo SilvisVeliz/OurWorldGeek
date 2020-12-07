@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2020 a las 05:36:27
+-- Tiempo de generación: 07-12-2020 a las 06:12:36
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.12
 
@@ -386,6 +386,32 @@ CREATE TABLE `inventario` (
   `idProducto` int(20) NOT NULL,
   `cantidadInventario` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `inventario`
+--
+
+INSERT INTO `inventario` (`idProducto`, `cantidadInventario`) VALUES
+(1, 900),
+(2, 512),
+(3, 87),
+(4, 190),
+(5, 892),
+(6, 123),
+(7, 654),
+(8, 293),
+(9, 984),
+(10, 264),
+(11, 276),
+(12, 132),
+(13, 87),
+(14, 23),
+(15, 89),
+(16, 243),
+(17, 768),
+(18, 12),
+(19, 321),
+(20, 201);
 
 -- --------------------------------------------------------
 
