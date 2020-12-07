@@ -306,14 +306,6 @@ $modulo=$_REQUEST['modulo']??'';
     <!--Local Stuff-->
     <script>
 
-
-
-
-
-
-
-
-
         jQuery(document).ready(function($) {
             "use strict";
 
@@ -404,6 +396,11 @@ $modulo=$_REQUEST['modulo']??'';
                 }
             });
             // Line Chart  #flotLine5 End
+
+
+
+
+
             // Traffic Chart using chartist
 
             //El bueno grafica
@@ -439,14 +436,6 @@ $modulo=$_REQUEST['modulo']??'';
                 });
             }
             // Traffic Chart using chartist End
-
-
-
-
-
-
-
-
 
             //Traffic chart chart-js
             if ($('#TrafficChart').length) {
@@ -497,14 +486,6 @@ $modulo=$_REQUEST['modulo']??'';
                 } );
             }
 
-
-
-
-
-
-
-
-
             //Traffic chart chart-js  End
             // Bar Chart #flotBarChart
             $.plot("#flotBarChart", [{
@@ -519,9 +500,13 @@ $modulo=$_REQUEST['modulo']??'';
                     show: false
                 }
             });
+
             // Bar Chart #flotBarChart End
+
+
         });
     </script>
+
 
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
