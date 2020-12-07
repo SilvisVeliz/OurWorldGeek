@@ -1,4 +1,4 @@
-INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (1,"Last Level","info@lastlevel.es",34954368866,1);
+﻿INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (1,"Last Level","info@lastlevel.es",34954368866,1);
 INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (2,"Geek Corner","contacto@geekcorner.mx",2228895097,2);
 INSERT INTO `proveedor`(`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES (3,"SuperGeek","mayoreo@supergeek.com.mx",2228895097,3);
 
@@ -179,6 +179,9 @@ INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMe
 INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (13,13,'2020-06-12',838,1); 
 INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (14,10,'2020-04-08',700,1); 
 INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idMetodo`) VALUES (15,12,'2020-03-13',199,2);  
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (16,12,'2020-12-05',199);  
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (17,7,'2020-12-06',220); 
+INSERT INTO `pedido`(`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`) VALUES (18,1,'2020-11-10',899);
 
 INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (1,16,1);
 INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (2,5,1);
@@ -198,6 +201,9 @@ INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (
 INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (13,9,1);
 INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (14,13,1);
 INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (15,9,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (16,20,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (17,2,1); 
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (18,18,1);
 
 INSERT INTO `metodopago`(`idMetodo`, `nombreMetodo`) VALUES (1,"PayPal");
 INSERT INTO `metodopago`(`idMetodo`, `nombreMetodo`) VALUES (2,"Tarjeta de Credito");
@@ -239,4 +245,6 @@ INSERT INTO `factura`(`idFactura`, `fechaFactura`, `idCliente`, `idProducto`, `i
 	VALUES (17,'2020-04-08',10,13,13,"Crédito",700,700);
 INSERT INTO `factura`(`idFactura`, `fechaFactura`, `idCliente`, `idProducto`, `idDireccion`, `metodoPago`, `cantidadProducto`, `totalPago`) 
 	VALUES (18,'2020-03-13',12,9,15,"Crédito",199,199);
-
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (16,20,1);
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (17,2,1); 
+INSERT INTO `detallepedido`(`idPedido`, `IdProducto`, `cantidadCompra`) VALUES (18,18,1);

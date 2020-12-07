@@ -7,6 +7,26 @@ $queryVentas7Dias="SELECT COUNT(idPedido) as num from pedido where fechaPedido B
 $resVentas7Dias=mysqli_query($con,$queryVentas7Dias);
 $rowVentas7Dias=mysqli_fetch_assoc($resVentas7Dias);
 
+$queryVentas7DiasI="SELECT SUM(costoTotal) as total from pedido where fechaPedido BETWEEN DATE(DATE_SUB(NOW(),INTERVAL 7 DAY) )AND NOW(); ";
+$resVentas7DiasI=mysqli_query($con,$queryVentas7DiasI);
+$rowVentas7DiasI=mysqli_fetch_assoc($resVentas7DiasI);
+
+$queryVentasxDia="SELECT COUNT(idPedido) as num from pedido where fechaPedido = DATE(NOW()) ; ";
+$resVentasxDia=mysqli_query($con,$queryVentasxDia);
+$rowVentasxDia=mysqli_fetch_assoc($resVentasxDia);
+
+$queryVentasxDiaI="SELECT sum(costoTotal) as total from pedido where fechaPedido = DATE(NOW()) ; ";
+$resVentasxDiaI=mysqli_query($con,$queryVentasxDiaI);
+$rowVentasxDiaI=mysqli_fetch_assoc($resVentasxDiaI);
+
+$queryVentasMes="SELECT COUNT(idPedido) as num from pedido where fechaPedido BETWEEN DATE(DATE_SUB(NOW(),INTERVAL 30 DAY) )AND NOW(); ";
+$resVentasMes=mysqli_query($con,$queryVentasMes);
+$rowVentasMes=mysqli_fetch_assoc($resVentasMes);
+
+$queryVentasMesI="SELECT SUM(costoTotal) as total from pedido where fechaPedido BETWEEN DATE(DATE_SUB(NOW(),INTERVAL 30 DAY) )AND NOW(); ";
+$resVentasMesI=mysqli_query($con,$queryVentasMesI);
+$rowVentasMesI=mysqli_fetch_assoc($resVentasMesI);
+
 $queryTotalClientes="SELECT COUNT(idCliente) as num from cliente";
 $resToralClientes=mysqli_query($con,$queryTotalClientes);
 $rowTotalClientes=mysqli_fetch_assoc($resToralClientes);
@@ -23,9 +43,6 @@ while($rowVentasPorDia=mysqli_fetch_assoc($resVentasPorDia)){
 }
 $labelPedidos=rtrim($labelPedidos,",");
 $datosPedidos=rtrim($datosPedidos,",");
-
-
-
 
 ?>
 
@@ -68,8 +85,51 @@ $datosPedidos=rtrim($datosPedidos,",");
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?php echo $rowVentas7Dias['num']?></span></div>
-                                    <div class="stat-heading">Pedidos de 7 días</div>
+                                    <div class="stat-text">Pedidos <span class="count"><?php echo $rowVentas7Dias['num']?></span></div>
+                                    <div class="stat-text">$ <span class="count"><?php echo $rowVentas7DiasI['total']?></span></div>
+                                    <div class="stat-heading">Pedidos de 7 días - Ingresos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-2">
+                                <i class="pe-7s-cart"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text">Pedidos <span class="count"><?php echo $rowVentasxDia['num']?></span></div>
+                                    <div class="stat-text">$ <span class="count"><?php echo $rowVentasxDiaI['total']?></span></div>
+                                    <div class="stat-heading">Pedidos del día - Ingresos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-2">
+                                <i class="pe-7s-cart"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text">Pedidos <span class="count"><?php echo $rowVentasMes['num']?></span></div>
+                                    <div class="stat-text">$ <span class="count"><?php echo $rowVentasMesI['total']?></span></div>
+                                    <div class="stat-heading">Pedidos del mes - Ingresos</div>
                                 </div>
                             </div>
                         </div>
@@ -105,6 +165,7 @@ $datosPedidos=rtrim($datosPedidos,",");
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count"><?php echo $rowTotalClientes['num'] ?></span></div>
+                                    <div class="stat-text">-<span class="text"></span></div>
                                     <div class="stat-heading">Total de clientes</div>
                                 </div>
                             </div>
@@ -136,6 +197,7 @@ $datosPedidos=rtrim($datosPedidos,",");
                 </div>
             </div><!-- /# column -->
         </div>
+
         <!--  /Traffic -->
         <div class="clearfix"></div>
         <!-- Orders -->
@@ -247,6 +309,9 @@ $datosPedidos=rtrim($datosPedidos,",");
                     <div class="row">
                         <div class="col-lg-6 col-xl-12">
                             <div class="card br-0">
+                                <div class="card-body">
+                                    <h4 class="card-title m-0">Plataformas</h4>
+                                </div>
                                 <div class="card-body">
                                     <div class="chart-container ov-h">
                                         <div id="flotPie1" class="float-chart"></div>
