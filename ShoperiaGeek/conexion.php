@@ -7,7 +7,4 @@ $db="shoperiageek";
 
 $conexion = mysqli_connect('localhost', 'root', '', 'shoperiageek');
 
-  
-  
-  
   ?>

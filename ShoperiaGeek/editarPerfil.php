@@ -100,8 +100,8 @@ $row2=mysqli_fetch_assoc($res2);
 <div class="content" style="margin-top: 10px">
     <div class="animated fadeIn">
         <div class="row">
-
-            <div class="col-md-12">
+        <div class="col-md-4"></div>
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Editar Perfil </strong>
@@ -125,8 +125,8 @@ $row2=mysqli_fetch_assoc($res2);
                                 <input type="text" name="apellido" class="form-control" value="<?php echo $row['apellidoCliente'] ?>" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Telefono</label>
-                                <input type="number" name="telefono" class="form-control" value="<?php echo $row['telefonoCliente'] ?>" required="required">
+                                <label>Teléfono</label>
+                                <input type="tel" name="telefono" class="form-control" value="<?php echo $row['telefonoCliente'] ?>" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Calle</label>
@@ -145,12 +145,12 @@ $row2=mysqli_fetch_assoc($res2);
                                 <input type="text" name="Estado" class="form-control" value="<?php echo $row2['Estado'] ?>" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Numero Exterior</label>
-                                <input type="number" name="numeroExterior" class="form-control" value="<?php echo $row2['numeroExterior'] ?>" required="required">
+                                <label>Número Exterior</label>
+                                <input type="text" name="numeroExterior" class="form-control" value="<?php echo $row2['numeroExterior'] ?>" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Numero Interior</label>
-                                <input type="number" name="numeroInterior" class="form-control" value="<?php echo $row2['numeroInterio'] ?>" >
+                                <label>Número Interior</label>
+                                <input type="text" name="numeroInterior" class="form-control" value="<?php echo $row2['numeroInterio'] ?>" >
                             </div>
                             <input type="hidden" name="id" value="<?php echo $row['idCliente'] ?>" required="required">
                             <input type="hidden" name="idDireccion" value="<?php echo $row2['idDireccion'] ?>" required="required">

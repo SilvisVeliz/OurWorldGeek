@@ -56,8 +56,10 @@ if(isset($_REQUEST['guardar'])){
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
+        <div class="col-sm-4">
 
-            <div class="col-md-12">
+        </div>
+            <div class="col-sm-4">
                 <div class="card">
                     <br>
                     <div class="card-header">
@@ -82,8 +84,8 @@ if(isset($_REQUEST['guardar'])){
                                 <input type="text" name="apellido" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Telefono</label>
-                                <input type="number" name="telefono" class="form-control" required="required">
+                                <label>Teléfono</label>
+                                <input type="tel" name="telefono" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Calle</label>
@@ -94,7 +96,7 @@ if(isset($_REQUEST['guardar'])){
                                 <input type="text" name="colonia" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Codigo Postal</label>
+                                <label>Código Postal</label>
                                 <input type="text" name="codigoPostal" class="form-control" required="required">
                             </div>
                             <div class="form-group">
@@ -102,12 +104,12 @@ if(isset($_REQUEST['guardar'])){
                                 <input type="text" name="estado" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Numero Interior</label>
-                                <input type="number" name="numeroInterior" class="form-control">
+                                <label>Número Exterior</label>
+                                <input type="text" name="numeroExterior" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Numero Exterior</label>
-                                <input type="number" name="numeroExterior" class="form-control" required="required">
+                                <label>Número Interior</label>
+                                <input type="text" name="numeroInterior" class="form-control">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
