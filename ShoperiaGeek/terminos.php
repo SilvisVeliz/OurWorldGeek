@@ -277,11 +277,11 @@ $modulo=$_REQUEST['modulo']??'';
 											</div>
 										</div>
 										<div class="cart-summary">
-											<small>4 articulos seleccionados</small>
+											<small>4 artículos seleccionados</small>
 											<h5>SUBTOTAL: $4240.00</h5>
 										</div>
 										<div class="cart-btns">
-											<a href="#">Ver carro</a>
+											<a href="#">Ver carrito</a>
 											<a href="#">Pagar  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>

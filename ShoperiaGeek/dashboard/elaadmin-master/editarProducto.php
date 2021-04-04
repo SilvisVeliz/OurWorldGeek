@@ -13,7 +13,6 @@ if(isset($_REQUEST['guardar'])){
     $descripcion=mysqli_real_escape_string($con,$_REQUEST['descripcion']??'');
     $id=mysqli_real_escape_string($con,$_REQUEST['id']??'');
     $nombreProveedor=mysqli_real_escape_string($con,$_REQUEST['nombreProveedor']??'');
-    $nombreFranquicia=mysqli_real_escape_string($con,$_REQUEST['nombreFranquicia']??'');
     $nombreCategoria=mysqli_real_escape_string($con,$_REQUEST['nombreCategoria']??'');
 
 
@@ -27,11 +26,6 @@ if(isset($_REQUEST['guardar'])){
     $row3=mysqli_fetch_assoc($re2s);
     $idProveedorS=$row3['idProveedor']??'';
 
-    $query3="SELECT nombreFranquicia,idFranquicia from franquicia where nombreFranquicia='".$nombreFranquicia."';
-    ";
-    $re3s=mysqli_query($con,$query3);
-    $row4=mysqli_fetch_assoc($re3s);
-    $idFranquiciaS=$row4['idFranquicia']??'';
 
     $query4="SELECT nombreCategoria,idCategoria from categoria where nombreCategoria='".$nombreCategoria."';
     ";
@@ -80,11 +74,6 @@ $res2=mysqli_query($con,$query2);
 $row2=mysqli_fetch_assoc($res2);
 $queryNombreProveedores=mysqli_query($con,"SELECT idProveedor,nombreProveedor from proveedor;");
 
-$query3="SELECT franquicia.idFranquicia,franquicia.nombreFranquicia from franquicia inner join producto on franquicia.idFranquicia=producto.idFranquicia where idProducto='".$id."'";
-$res3=mysqli_query($con,$query3);
-$row3=mysqli_fetch_assoc($res3);
-$queryNombreFranquicias=mysqli_query($con,"SELECT idFranquicia,nombreFranquicia from franquicia;");
-
 $query4="SELECT categoria.idCategoria,categoria.nombreCategoria from categoria inner join producto on categoria.idCategoria=producto.idCategoria where idProducto='".$id."'";
 $res4=mysqli_query($con,$query4);
 $row4=mysqli_fetch_assoc($res4);
@@ -120,25 +109,10 @@ $queryNombreCategorias=mysqli_query($con,"SELECT idCategoria,nombreCategoria fro
                                 <input type="number" name="precioDescuento" class="form-control" value="<?php echo $row['precioDescuento']; ?>"required="required">
                             </div>
                             <div class="form-group">
-                                <label>Descripcion</label>
+                                <label>Descripción</label>
                                 <input type="text" name="descripcion" class="form-control" value="<?php echo $row['descripcion'] ?>" required="required">
                             </div>
-                            <div class="form-group">
-                                <label>Nombre Franquicia</label>
-                                <label type="text" class="form-control" required="required"><?php echo $row3['nombreFranquicia'] ?>
-                            </div>
-                            <div class="form-group">
-                                <select name="nombreFranquicia">
-                                    <?php
-                                    while($nombreFranquicias=mysqli_fetch_array($queryNombreFranquicias)){
 
-                                        ?>
-                                        <option value="<?php echo $nombreFranquicias['nombreFranquicia'] ?>"><?php echo $nombreFranquicias['nombreFranquicia'] ?></option>
-                                        <?php
-                                    }
-                                    ?>
-                                </select>
-                            </div>
                             <div class="form-group">
                                 <label>Nombre Categoria</label>
                                 <label type="text" class="form-control" required="required"><?php echo $row4['nombreCategoria'] ?>
@@ -177,7 +151,6 @@ $queryNombreCategorias=mysqli_query($con,"SELECT idCategoria,nombreCategoria fro
                             <input type="hidden" name="id" value="<?php echo $row['idProducto'] ?>" required="required">
 
                             <input type="hidden" name="idProveedor" value="<?php echo $row2['idProveedor'] ?>" required="required">
-                            <input type="hidden" name="idFranquicia" value="<?php echo $row3['idFranquicia'] ?>" required="required">
                             <input type="hidden" name="idCategoria" value="<?php echo $row4['idCategoria'] ?>" required="required">
 
                             <div class="form-group">

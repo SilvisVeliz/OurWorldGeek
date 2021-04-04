@@ -182,10 +182,9 @@ $modulo=$_REQUEST['modulo']??'';
                         </a>
 
                         <div class="user-menu dropdown-menu">
+                            <!--
                             <a class="nav-link" href="dashboard.php?modulo=editarUsuario&id=<?php echo $_SESSION['id']; ?>">Editar Perfil</a>
-
-                            <a class="nav-link" href="#"></i>Notificationes <span class="count">13</span></a>
-
+                            -->
                             <a class="nav-link" href="#"></i>Configuración</a>
 
                             <a class="nav-link" href="../../index.php?modulo=&sesion=cerrar" title="Cerrar sesion"><i class="fa fa-power -off"></i>Salir</a>
@@ -262,7 +261,7 @@ $modulo=$_REQUEST['modulo']??'';
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; 2020 ShoperiaGeek
+                        Copyright &copy; 2021 ShoperiaGeek
                     </div>
                     <div class="col-sm-6 text-right">
                         Designed by <a href="https://colorlib.com">Colorlib</a>

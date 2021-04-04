@@ -4,11 +4,10 @@
 
 <?php
     $id=mysqli_real_escape_string($con,$_REQUEST['id']??'');
-    $queryProducto="SELECT producto.idProducto, producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,producto.descripcion, inventario.cantidadInventario,categoria.nombreCategoria,franquicia.nombreFranquicia, imagen.direccionImagen
+    $queryProducto="SELECT producto.idProducto, producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,producto.descripcion, inventario.cantidadInventario,categoria.nombreCategoria,imagen.direccionImagen
     from producto 
     INNER JOIN inventario ON producto.idProducto=inventario.idProducto
     INNER JOIN categoria ON categoria.idCategoria=producto.idCategoria
-    INNER JOIN franquicia ON franquicia.idFranquicia=producto.idFranquicia
     INNER JOIN producto_imagen ON producto_imagen.idProducto=producto.idProducto 
     INNER JOIN imagen ON imagen.idImagen=producto_imagen.idImagen
     WHERE producto.idProducto='$id';";
@@ -31,9 +30,6 @@
     $resImagenes=mysqli_query($con,$queryImagenes);
     $rowProducto2=mysqli_fetch_assoc($resImagenes);
     $resImagenesMain=mysqli_query($con,$queryImagenes);
-
-
-
 
 
     $queryCantidadComentarios="SELECT COUNT(*) 
@@ -154,9 +150,8 @@
                     </ul>
 
                     <ul class="product-links">
-                        <li>Categoria y franquicia:</li>
+                        <li>Categoría: </li>
                         <li><a href="#"><?php echo $rowProducto['nombreCategoria'] ?></a></li>
-                        <li><a href="#"><?php echo $rowProducto['nombreFranquicia'] ?></a></li>
                     </ul>
 
 

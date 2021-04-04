@@ -118,7 +118,7 @@ if(isset($_REQUEST['guardar'])){
                                 <input type="text" name="Estado" class="form-control" value="<?php echo $row2['Estado'] ?>" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Numero Exterior</label>
+                                <label>Numero0000000000000000 Exterior</label>
                                 <input type="number" name="numeroExterior" class="form-control" value="<?php echo $row2['numeroExterior'] ?>" required="required">
                             </div>
                             <div class="form-group">

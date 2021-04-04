@@ -44,7 +44,6 @@ if(isset($_REQUEST['idBorrar'])){
                                 <th>Nombre</th>
                                 <th>Precio</th>
                                 <th>Descripcion</th>
-                                <th>Franquisia</th>
                                 <th>Categoria</th>
 
                                 <?php
@@ -62,16 +61,12 @@ if(isset($_REQUEST['idBorrar'])){
                                 }
                                 ?>
 
-
-
-
-
                             </tr>
                             </thead>
                             <tbody>
                             <?php
 
-                            $query="SELECT producto.idProducto,producto.nombreProducto,producto.precioOriginal,producto.descripcion,categoria.nombreCategoria,franquicia.nombreFranquicia from producto INNER JOIN categoria ON categoria.idCategoria=producto.idCategoria INNER JOIN franquicia ON franquicia.idFranquicia=producto.idFranquicia";
+                            $query="SELECT producto.idProducto,producto.nombreProducto,producto.precioOriginal,producto.descripcion,categoria.nombreCategoria from producto INNER JOIN categoria ON categoria.idCategoria=producto.idCategoria";
                             $res=mysqli_query($con,$query);
 
 
@@ -83,7 +78,6 @@ if(isset($_REQUEST['idBorrar'])){
                                     <th> <?php echo $row['nombreProducto']  ?> </th>
                                     <th> <?php echo $row['precioOriginal']  ?> </th>
                                     <th> <?php echo $row['descripcion']  ?> </th>
-                                    <th> <?php echo $row['nombreFranquicia']  ?> </th>
                                     <th> <?php echo $row['nombreCategoria']  ?> </th>
 
                                     <?php

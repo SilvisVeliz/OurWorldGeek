@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2020 a las 06:12:36
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.2.12
+-- Tiempo de generación: 04-04-2021 a las 08:22:59
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `bitacoracliente` (
   `idBitacoraCliente` int(20) NOT NULL,
   `idCliente` int(20) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `responsable` varchar(30) NOT NULL,
   `actividad_realizada` varchar(50) NOT NULL,
   `informacion_actual` text NOT NULL,
@@ -47,7 +46,7 @@ CREATE TABLE `bitacoracliente` (
 CREATE TABLE `bitacoraempleado` (
   `idBitacoraEmpleado` int(20) NOT NULL,
   `idEmpleado` int(20) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `responsable` varchar(30) NOT NULL,
   `actividad_realizada` varchar(50) NOT NULL,
   `informacion_actual` text NOT NULL,
@@ -63,7 +62,7 @@ CREATE TABLE `bitacoraempleado` (
 CREATE TABLE `bitacoraproducto` (
   `idBitacoraProducto` int(20) NOT NULL,
   `idProducto` int(20) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `responsable` varchar(30) NOT NULL,
   `actividad_realizada` varchar(50) NOT NULL,
   `informacion_actual` text NOT NULL,
@@ -157,7 +156,8 @@ INSERT INTO `cliente` (`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCl
 (12, 'Laura', 'Perdomo', 'lauraperdom0@gmail.com', '5545907612', 1, 15, '2b637a75e5d51d4e81c2d6e17d56955f'),
 (13, 'Amanda Rosal', 'Palacios', 'amandarosalpala@hotmail.com', '7074041532', 1, 16, 'cb1603a5b22dd6823a3e42c6896140be'),
 (14, 'Alexandru', 'Ares', 'aares@outlook.com', '6098763450', 1, 17, 'dfa6e19ce3d4e024f87eeb77c7e909dc'),
-(15, 'Miquel', 'Lloret', 'Loraloramiq@gmail.com', '4460981238', 1, 18, 'e743d0d097d5047f21b1020ef93dec9c');
+(15, 'Miquel', 'Lloret', 'Loraloramiq@gmail.com', '4460981238', 1, 18, 'e743d0d097d5047f21b1020ef93dec9c'),
+(16, 'SILVIA RAQUEL', 'SERRANO VELIZ', 'silviaraquel110@gmail.com', '4493442718', 0, 22, 'cef4df772ab6d1020c8c7780ff31931e');
 
 -- --------------------------------------------------------
 
@@ -205,35 +205,36 @@ INSERT INTO `comentario` (`idComentario`, `idCliente`, `idProducto`, `Comentario
 CREATE TABLE `detallepedido` (
   `idPedido` int(20) NOT NULL,
   `idProducto` int(20) NOT NULL,
-  `cantidadCompra` int(10) NOT NULL
+  `cantidadCompra` int(10) NOT NULL,
+  `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `detallepedido`
 --
 
-INSERT INTO `detallepedido` (`idPedido`, `idProducto`, `cantidadCompra`) VALUES
-(1, 16, 1),
-(2, 5, 1),
-(3, 13, 1),
-(3, 16, 1),
-(4, 7, 1),
-(5, 12, 1),
-(6, 12, 1),
-(7, 11, 1),
-(8, 8, 1),
-(9, 3, 1),
-(9, 6, 1),
-(10, 5, 1),
-(11, 20, 1),
-(12, 13, 1),
-(13, 6, 1),
-(13, 9, 1),
-(14, 13, 1),
-(15, 9, 1),
-(16, 20, 1),
-(17, 2, 1),
-(18, 18, 1);
+INSERT INTO `detallepedido` (`idPedido`, `idProducto`, `cantidadCompra`, `status`) VALUES
+(1, 16, 1, 'Pendiente'),
+(2, 5, 1, 'Completado'),
+(3, 13, 1, 'Completado'),
+(3, 16, 1, 'Completado'),
+(4, 7, 1, 'Completado'),
+(5, 12, 1, 'Completado'),
+(6, 12, 1, 'Pendiente'),
+(7, 11, 1, 'Completado'),
+(8, 8, 1, 'Pendiente'),
+(9, 3, 1, 'Pendiente'),
+(9, 6, 1, 'Completado'),
+(10, 5, 1, 'Pendiente'),
+(11, 20, 1, 'Pendiente'),
+(12, 13, 1, 'Completado'),
+(13, 6, 1, 'Pendiente'),
+(13, 9, 1, 'Completado'),
+(14, 13, 1, 'Completado'),
+(15, 9, 1, 'Completado'),
+(16, 20, 1, 'Pendiente'),
+(17, 2, 1, 'Pendiente'),
+(18, 18, 1, 'Completado');
 
 -- --------------------------------------------------------
 
@@ -274,9 +275,10 @@ INSERT INTO `direccion` (`idDireccion`, `calle`, `colonia`, `codigoPostal`, `Est
 (16, 'jose maria morelos', 'bomintzac', 9768, 'Sonora', 12, 0),
 (17, 'ejercito mexicano', 'fresno', 46758, 'Tlaxcala', 906, 2),
 (18, 'av 16 de julio', 'caxuxi', 90878, 'Aguascalientes', 2343, 7),
-(19, 'calle montario', 'vicente guerrero', 78932, 'Guerrero', 132, 0),
-(20, 'av mariano polero', 'palmero', 89321, 'Michoacan', 890, 2),
-(21, 'palomito viajero', 'sierra madre', 90832, 'Yucatan', 233, 1);
+(19, 'calle montario', 'vicente guerrero', 78932, 'Guerrero', 133, 0),
+(20, 'av mariano polero', 'palmero', 89321, 'Michoacan', 890, 500),
+(21, 'palomito viajero', 'sierra madre', 90832, 'Yucatan', 233, 1),
+(22, 'de la loma', 'lomitas', 20199, 'Aguascalientes', 0, 508);
 
 -- --------------------------------------------------------
 
@@ -303,36 +305,8 @@ CREATE TABLE `empleado` (
 
 INSERT INTO `empleado` (`idEmpleado`, `nombreEmpleado`, `apellidoEmpleado`, `emailEmpleado`, `telefonoEmpleado`, `acceso`, `Suledo`, `idImagen`, `idDireccion`, `passwordEmpleado`) VALUES
 (1, 'Eleazar', 'Palacios', 'ElePala90@gmail.com', '4567890321', 'Administrador', '8900', 1, 19, 'fe196833cc573a26b141ff1d2a35c9ae'),
-(2, 'Ana Lizbeth', 'Covarrubias', 'AnaLiz91@gmail.com', '4669871430', 'Vendedor', '5670', 2, 20, '028d8b722c6b3ccc786f774b402e30c8'),
+(2, 'Ana Lizbeth', 'Covarrubias', 'AnaLiz91@gmail.com', '4669871430', 'Administrador', '5670', 2, 20, '028d8b722c6b3ccc786f774b402e30c8'),
 (3, 'Gerardo', 'Montañez', 'GeraMon92@gmail.com', '3215678904', 'Vendedor', '5670', 3, 21, '29f91d161732d4da03314773209c79f6');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `franquicia`
---
-
-CREATE TABLE `franquicia` (
-  `idFranquicia` int(20) NOT NULL,
-  `nombreFranquicia` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `franquicia`
---
-
-INSERT INTO `franquicia` (`idFranquicia`, `nombreFranquicia`) VALUES
-(1, 'The Warriors'),
-(2, 'El Padrino'),
-(3, 'Metalica'),
-(4, 'deus'),
-(5, 'Crusader kings'),
-(6, 'City skylines'),
-(7, 'Dune'),
-(8, 'qposket'),
-(9, 'Banpresto'),
-(10, 'Colony Wars'),
-(11, 'Hora de Aventura');
 
 -- --------------------------------------------------------
 
@@ -433,7 +407,7 @@ CREATE TABLE `metodopago` (
 CREATE TABLE `pedido` (
   `idPedido` int(20) NOT NULL,
   `idCliente` int(20) NOT NULL,
-  `fechaPedido` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fechaPedido` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `costoTotal` decimal(10,2) NOT NULL,
   `idMetodo` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -474,7 +448,6 @@ CREATE TABLE `producto` (
   `precioOriginal` decimal(10,2) NOT NULL,
   `precioDescuento` decimal(10,2) DEFAULT NULL,
   `descripcion` varchar(50) NOT NULL,
-  `idFranquicia` int(20) NOT NULL,
   `idCategoria` int(20) NOT NULL,
   `idProveedor` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -483,27 +456,27 @@ CREATE TABLE `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`idProducto`, `nombreProducto`, `precioOriginal`, `precioDescuento`, `descripcion`, `idFranquicia`, `idCategoria`, `idProveedor`) VALUES
-(1, 'camiseta The Warriors grupo L', '220.00', '200.00', 'camiseta tamaño L', 1, 1, 1),
-(2, 'camiseta The Warriors grupo M', '220.00', '0.00', 'camiseta tamaño M', 1, 1, 1),
-(3, 'camiseta The Warriors grupo S', '220.00', '0.00', 'camiseta tamaño S', 1, 1, 1),
-(4, 'camiseta el Padrino L', '349.00', '0.00', 'camisa tamaño L', 2, 1, 1),
-(5, 'camiseta el Padrino S', '349.00', '0.00', 'camisa tamaño S', 2, 1, 1),
-(6, 'camiseta La Chaqueta Metalica ', '599.00', '0.00', 'camiseta tamaño XXL', 3, 1, 1),
-(7, 'camiseta La Chaqueta Metalica ', '599.00', '0.00', 'camiseta tamaño XL', 3, 1, 1),
-(8, 'figura deus ex mankind divided', '499.00', '0.00', 'figura de 30 cm', 4, 2, 3),
-(9, 'taza crusader kings', '239.00', '0.00', 'taza adornada', 5, 2, 3),
-(10, 'taza city skylines', '199.00', '0.00', 'taza', 6, 2, 3),
-(11, 'figura pop Dune: Lady Jessica', '699.00', '0.00', 'figura Dune', 7, 3, 2),
-(12, 'figura pop Dune: Duncan Idaho', '899.00', '0.00', 'figura Dune', 7, 3, 2),
-(13, 'figura porp Dune: Duke Leto', '700.00', '0.00', 'figura dune', 7, 3, 2),
-(14, 'figura porp Dune: Baron Karkon', '759.00', '0.00', 'figura dune', 7, 3, 2),
-(15, 'figura qposket kimetsu no yaib', '499.00', '0.00', 'figura Tanjiro 14 cm', 8, 4, 2),
-(16, 'figura banpresto Saint Seiya M', '439.00', '0.00', 'figura banpresto 16 cm', 9, 4, 2),
-(17, 'figura qposket kimetsu no yaib', '499.00', '0.00', 'figura Vib Nezuko 12 cm', 8, 4, 2),
-(18, 'figura Banpresto One Piece Luf', '899.00', '0.00', 'figura One piece 13 cm', 9, 4, 2),
-(19, 'Display mazos star realms colo', '199.00', '0.00', 'juego de cartas 6pz', 10, 5, 3),
-(20, 'gorra Hora de Aventura', '199.00', '0.00', 'gorra', 11, 6, 1);
+INSERT INTO `producto` (`idProducto`, `nombreProducto`, `precioOriginal`, `precioDescuento`, `descripcion`, `idCategoria`, `idProveedor`) VALUES
+(1, 'camiseta The Warriors grupo L', '220.00', '200.00', 'camiseta tamaño L', 1, 1),
+(2, 'camiseta The Warriors grupo M', '220.00', '0.00', 'camiseta tamaño M', 1, 1),
+(3, 'camiseta The Warriors grupo S', '220.00', '0.00', 'camiseta tamaño S', 1, 1),
+(4, 'camiseta el Padrino L', '349.00', '0.00', 'camisa tamaño L', 1, 1),
+(5, 'camiseta el Padrino S', '349.00', '0.00', 'camisa tamaño S', 1, 1),
+(6, 'camiseta La Chaqueta Metalica ', '599.00', '0.00', 'camiseta tamaño XXL', 1, 1),
+(7, 'camiseta La Chaqueta Metalica ', '599.00', '0.00', 'camiseta tamaño XL', 1, 1),
+(8, 'figura deus ex mankind divided', '499.00', '0.00', 'figura de 30 cm', 2, 3),
+(9, 'taza crusader kings', '239.00', '0.00', 'taza adornada', 2, 3),
+(10, 'taza city skylines', '199.00', '0.00', 'taza', 2, 3),
+(11, 'figura pop Dune: Lady Jessica', '699.00', '0.00', 'figura Dune', 3, 2),
+(12, 'figura pop Dune: Duncan Idaho', '899.00', '0.00', 'figura Dune', 3, 2),
+(13, 'figura porp Dune: Duke Leto', '700.00', '0.00', 'figura dune', 3, 2),
+(14, 'figura porp Dune: Baron Karkon', '759.00', '0.00', 'figura dune', 3, 2),
+(15, 'figura qposket kimetsu no yaib', '499.00', '0.00', 'figura Tanjiro 14 cm', 4, 2),
+(16, 'figura banpresto Saint Seiya M', '439.00', '0.00', 'figura banpresto 16 cm', 4, 2),
+(17, 'figura qposket kimetsu no yaib', '499.00', '0.00', 'figura Vib Nezuko 12 cm', 4, 2),
+(18, 'figura Banpresto One Piece Luf', '899.00', '0.00', 'figura One piece 13 cm', 4, 2),
+(19, 'Display mazos star realms colo', '199.00', '0.00', 'juego de cartas 6pz', 5, 3),
+(20, 'gorra Hora de Aventura', '199.00', '0.00', 'gorra', 6, 1);
 
 --
 -- Disparadores `producto`
@@ -648,12 +621,6 @@ ALTER TABLE `empleado`
   ADD PRIMARY KEY (`idEmpleado`);
 
 --
--- Indices de la tabla `franquicia`
---
-ALTER TABLE `franquicia`
-  ADD PRIMARY KEY (`idFranquicia`);
-
---
 -- Indices de la tabla `imagen`
 --
 ALTER TABLE `imagen`
@@ -715,7 +682,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `comentario`
@@ -727,19 +694,13 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
-  MODIFY `idDireccion` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idDireccion` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
   MODIFY `idEmpleado` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `franquicia`
---
-ALTER TABLE `franquicia`
-  MODIFY `idFranquicia` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `imagen`

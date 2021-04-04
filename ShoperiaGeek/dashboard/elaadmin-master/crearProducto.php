@@ -10,7 +10,6 @@ if(isset($_REQUEST['guardar'])){
     $nombre=mysqli_real_escape_string($con,$_REQUEST['nombre']??'');
     $precio=mysqli_real_escape_string($con,$_REQUEST['precio']??'');
     $descripcion=mysqli_real_escape_string($con,$_REQUEST['descripcion']??'');
-    $franquicia=mysqli_real_escape_string($con,$_REQUEST['franquicia']??'');
     $categoria=mysqli_real_escape_string($con,$_REQUEST['categoria']??'');
     $nombreProveedor=mysqli_real_escape_string($con,$_REQUEST['nombreProveedor']??'');
     $idProveedor=mysqli_real_escape_string($con,$_REQUEST['idProveedor']??'');
@@ -24,8 +23,8 @@ if(isset($_REQUEST['guardar'])){
 
 
     $query="INSERT INTO producto
-        (nombreProducto,precio,descripcion,franquicia,categoria,idProveedor) VALUES
-        ('".$nombre."','".$precio."','".$descripcion."','".$franquicia."','".$categoria."','".$idProveedor."')";
+        (nombreProducto,precio,descripcion,categoria,idProveedor) VALUES
+        ('".$nombre."','".$precio."','".$descripcion."','".$categoria."','".$idProveedor."')";
     $res=mysqli_query($con,$query);
 
     if($res){
@@ -67,12 +66,8 @@ $queryNombreProveedores=mysqli_query($con,"SELECT idProveedor,nombreProveedor fr
                                 <input type="number" name="precio" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Descripcion</label>
+                                <label>Descripción</label>
                                 <input type="text" name="descripcion" class="form-control" required="required">
-                            </div>
-                            <div class="form-group">
-                                <label>Franquicia</label>
-                                <input type="text" name="franquicia" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Categoria</label>
