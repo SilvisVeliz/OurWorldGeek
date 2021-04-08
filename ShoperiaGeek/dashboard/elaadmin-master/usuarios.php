@@ -111,13 +111,9 @@
                         </table>
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                 <tr>
-                    <td>id</td>
                     <td>idCliente</td>
+                    <td>idProducto</td>
                     <td>fecha</td>
-                    <td>responsable</td>
-                    <td>actividad realizada</td>
-                    <td>informacion actual</td>
-                    <td>informacion anterior</td>
                 </tr>
 
                 <?php
@@ -129,13 +125,9 @@
                 ?>
 
                 <tr>
-                    <td><?php echo $row['idBitacoraCliente']  ?></td>
                     <td><?php echo $row['idCliente']  ?></td>
+                    <td><?php echo $row['idProducto']  ?></td>
                     <td><?php echo $row['fecha']  ?></td>
-                    <td><?php echo $row['responsable']  ?></td>
-                    <td><?php echo $row['actividad_realizada']  ?></td>
-                    <td><?php echo $row['informacion_actual']  ?></td>
-                    <td><?php echo $row['informacion_actual']  ?></td>
                 </tr>
                 <?php
                 }

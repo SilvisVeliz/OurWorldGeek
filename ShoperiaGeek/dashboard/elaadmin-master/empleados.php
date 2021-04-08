@@ -1,6 +1,7 @@
 <?php
 
 
+
 include_once "conexion.php";
 $con=mysqli_connect($host,$user,$pass,$db);
 
@@ -36,6 +37,10 @@ if(isset($_REQUEST['idBorrar'])){
                     <div class="card-header">
                         <strong class="card-title">Empleados</strong>
                     </div>
+                    <div class="card-header">
+                        Crear empleado
+                        <a href="dashboard.php?modulo=crearEmpleado"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
                     <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
@@ -44,7 +49,7 @@ if(isset($_REQUEST['idBorrar'])){
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Email</th>
-                                <th>Telefono</th>
+                                <th>Teléfono</th>
                                 <th>Acceso</th>
                                 <th>Sueldo</th>
 

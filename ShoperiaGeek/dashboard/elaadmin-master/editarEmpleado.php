@@ -74,8 +74,10 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
+            <div class="col-md-4">
 
-            <div class="col-md-12">
+            </div>
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Editar Empleado </strong>

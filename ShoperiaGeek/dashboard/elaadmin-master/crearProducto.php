@@ -8,14 +8,17 @@ $con=mysqli_connect($host,$user,$pass,$db);
 
 if(isset($_REQUEST['guardar'])){
     $nombre=mysqli_real_escape_string($con,$_REQUEST['nombre']??'');
-    $precio=mysqli_real_escape_string($con,$_REQUEST['precio']??'');
+    $precioOriginal=mysqli_real_escape_string($con,$_REQUEST['precioOriginal']??'');
+    $precioDescuento=mysqli_real_escape_string($con,$_REQUEST['precioDescuento']??'');
     $descripcion=mysqli_real_escape_string($con,$_REQUEST['descripcion']??'');
-    $categoria=mysqli_real_escape_string($con,$_REQUEST['categoria']??'');
+    $categoria=mysqli_real_escape_string($con,$_REQUEST['nombreCategoria']??'');
     $nombreProveedor=mysqli_real_escape_string($con,$_REQUEST['nombreProveedor']??'');
     $idProveedor=mysqli_real_escape_string($con,$_REQUEST['idProveedor']??'');
 
-    $query2="SELECT nombreProveedor,idProveedor from proveedor where nombreProveedor='".$nombreProveedor."';
-    ";
+    $query2="SELECT nombreProveedor,idProveedor from proveedor where nombreProveedor='".$nombreProveedor."'";
+
+    /*$query2="SELECT nombreProveedor,idProveedor from proveedor where nombreProveedor='".$nombreProveedor."'";
+    $query2="SELECT nombreProveedor,idProveedor from proveedor where nombreProveedor=$nombreProveedor";*/
     $re2s=mysqli_query($con,$query2);
     $row3=mysqli_fetch_assoc($re2s);
     $idProveedor=$row3['idProveedor']??'';
@@ -23,8 +26,8 @@ if(isset($_REQUEST['guardar'])){
 
 
     $query="INSERT INTO producto
-        (nombreProducto,precio,descripcion,categoria,idProveedor) VALUES
-        ('".$nombre."','".$precio."','".$descripcion."','".$categoria."','".$idProveedor."')";
+        (nombreProducto,precioOriginal,precioDescuento,descripcion,idCategoria,idProveedor) VALUES
+        ('".$nombre."','".$precioOriginal."','".$precioDescuento."','".$descripcion."','".$categoria."','".$idProveedor."')";
     $res=mysqli_query($con,$query);
 
     if($res){
@@ -49,8 +52,8 @@ $queryNombreProveedores=mysqli_query($con,"SELECT idProveedor,nombreProveedor fr
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
-
-            <div class="col-md-12">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Agregar producto</strong>
@@ -62,8 +65,12 @@ $queryNombreProveedores=mysqli_query($con,"SELECT idProveedor,nombreProveedor fr
                                 <input type="text" name="nombre" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Precio</label>
-                                <input type="number" name="precio" class="form-control" required="required">
+                                <label>Precio original</label>
+                                <input type="number" name="precioOriginal" class="form-control" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>Precio con descuento</label>
+                                <input type="number" name="precioDescuento" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Descripción</label>
@@ -71,7 +78,7 @@ $queryNombreProveedores=mysqli_query($con,"SELECT idProveedor,nombreProveedor fr
                             </div>
                             <div class="form-group">
                                 <label>Categoria</label>
-                                <input type="text" name="categoria" class="form-control" required="required">
+                                <input type="text" name="nombreCategoria" class="form-control" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Proveedor</label>

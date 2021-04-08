@@ -138,6 +138,7 @@ $modulo=$_REQUEST['modulo']??'';
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-shopping-bag"></i><a href="dashboard.php?modulo=productos">Productos</a></li>
                             <li><i class="menu-icon fa fa-address-book-o"></i><a href="dashboard.php?modulo=proveedores">Proveedores</a></li>
+                            <li><i class="menu-icon fa fa-address-book-o"></i><a href="dashboard.php?modulo=proveedores">Categorías</a></li>
 
                         </ul>
                     </li>

@@ -31,6 +31,10 @@ $queryTotalClientes="SELECT COUNT(idCliente) as num from cliente";
 $resToralClientes=mysqli_query($con,$queryTotalClientes);
 $rowTotalClientes=mysqli_fetch_assoc($resToralClientes);
 
+$queryTotalProductos="SELECT COUNT(idProducto) as num from producto";
+$resToralProducto=mysqli_query($con,$queryTotalProductos);
+$rowTotalProductos=mysqli_fetch_assoc($resToralProducto);
+
 $queryVentasPorDia="
 SELECT sum(detallePedido.cantidadCompra) as total,pedido.fechaPedido from pedido INNER JOIN detallePedido on detallePedido.idPedido = pedido.idPedido
 GROUP BY DAY(pedido.fechaPedido);";
@@ -167,6 +171,11 @@ $datosPedidos=rtrim($datosPedidos,",");
                                     <div class="stat-text"><span class="count"><?php echo $rowTotalClientes['num'] ?></span></div>
                                     <div class="stat-text">-<span class="text"></span></div>
                                     <div class="stat-heading">Total de clientes</div>
+                                </div>
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count"><?php echo $rowTotalProductos['num'] ?></span></div>
+                                    <div class="stat-text">-<span class="text"></span></div>
+                                    <div class="stat-heading">Total de productos</div>
                                 </div>
                             </div>
                         </div>

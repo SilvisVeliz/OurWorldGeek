@@ -13,7 +13,7 @@ if(isset($_REQUEST['guardar'])){
     $descripcion=mysqli_real_escape_string($con,$_REQUEST['descripcion']??'');
     $id=mysqli_real_escape_string($con,$_REQUEST['id']??'');
     $nombreProveedor=mysqli_real_escape_string($con,$_REQUEST['nombreProveedor']??'');
-    $nombreCategoria=mysqli_real_escape_string($con,$_REQUEST['nombreCategoria']??'');
+    $nombreCategorias=mysqli_real_escape_string($con,$_REQUEST['nombreCategoria']??'');
 
 
 
@@ -27,7 +27,7 @@ if(isset($_REQUEST['guardar'])){
     $idProveedorS=$row3['idProveedor']??'';
 
 
-    $query4="SELECT nombreCategoria,idCategoria from categoria where nombreCategoria='".$nombreCategoria."';
+    $query4="SELECT nombreCategoria,idCategoria from categoria where nombreCategoria='".$nombreCategorias."';
     ";
     $re4s=mysqli_query($con,$query4);
     $row5=mysqli_fetch_assoc($re4s);
@@ -36,7 +36,7 @@ if(isset($_REQUEST['guardar'])){
 
 
     $query="UPDATE producto SET
-        nombreProducto='".$nombre."',precioOriginal='".$precioOriginal."',precioDescuento='".$precioDescuento."',descripcion='".$descripcion."',idFranquicia='".$idFranquiciaS."',idCategoria='".$idCategoriaS."', idProveedor='".$idProveedorS."'
+        nombreProducto='".$nombre."',precioOriginal='".$precioOriginal."',precioDescuento='".$precioDescuento."',descripcion='".$descripcion."',idCategoria='".$idCategoriaS."', idProveedor='".$idProveedorS."'
         where idProducto='".$id."';
         ";
     $res=mysqli_query($con,$query);

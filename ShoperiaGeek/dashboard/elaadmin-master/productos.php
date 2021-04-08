@@ -36,6 +36,12 @@ if(isset($_REQUEST['idBorrar'])){
                     <div class="card-header">
                         <strong class="card-title">Productos</strong>
                     </div>
+                    <!--
+                    <div class="card-header">
+                        Añadir producto
+                        <a href="dashboard.php?modulo=crearProducto"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                    -->
                     <div class="card-body">
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
@@ -43,7 +49,7 @@ if(isset($_REQUEST['idBorrar'])){
 
                                 <th>Nombre</th>
                                 <th>Precio</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Categoria</th>
 
                                 <?php
@@ -113,8 +119,8 @@ if(isset($_REQUEST['idBorrar'])){
                     <td>fecha</td>
                     <td>responsable</td>
                     <td>actividad realizada</td>
-                    <td>informacion actual</td>
-                    <td>informacion anterior</td>
+                    <td>información actual</td>
+                    <td>información anterior</td>
                 </tr>
 
                 <?php
@@ -132,7 +138,7 @@ if(isset($_REQUEST['idBorrar'])){
                     <td><?php echo $row['responsable']  ?></td>
                     <td><?php echo $row['actividad_realizada']  ?></td>
                     <td><?php echo $row['informacion_actual']  ?></td>
-                    <td><?php echo $row['informacion_actual']  ?></td>
+                    <td><?php echo $row['informacion_anterior']  ?></td>
                 </tr>
                 <?php
                 }

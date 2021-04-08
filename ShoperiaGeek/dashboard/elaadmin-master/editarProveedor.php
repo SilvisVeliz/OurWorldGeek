@@ -16,7 +16,7 @@ if(isset($_REQUEST['guardar'])){
     $colonia=mysqli_real_escape_string($con,$_REQUEST['colonia']??'');
     $codigoPostal=mysqli_real_escape_string($con,$_REQUEST['codigoPostal']??'');
     $estado=mysqli_real_escape_string($con,$_REQUEST['Estado']??'');
-    $numeroInterior=mysqli_real_escape_string($con,$_REQUEST['numeroInterior']??'');
+    $numeroInterior=mysqli_real_escape_string($con,$_REQUEST['numeroInterio']??'');
     $numeroExterior=mysqli_real_escape_string($con,$_REQUEST['numeroExterior']??'');
 
 

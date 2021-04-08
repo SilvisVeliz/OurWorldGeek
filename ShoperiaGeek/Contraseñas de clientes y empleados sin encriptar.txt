@@ -9,6 +9,12 @@ AnaLiz91@gmail.com (Vendedor)
 
 GeraMon92@gmail.com (Vendedor)
 "pass3emp3"
+
+YahairaOrnelas@gmail.com (Vendedor)
+"pass4emp4"
+
+ana.lizette02@gmail.com (vendedor)
+"pass5emp5"
 ------------------------------------------------------------------
 Clientes
 ------------------------------------------------------------------

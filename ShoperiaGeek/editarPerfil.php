@@ -138,7 +138,7 @@ $row2=mysqli_fetch_assoc($res2);
                             </div>
                             <div class="form-group">
                                 <label>Codigo Postal</label>
-                                <input type="text" name="codigoPostal" class="form-control" value="<?php echo $row2['codigoPostal'] ?>" required="required">
+                                <input type="number" name="codigoPostal" class="form-control" value="<?php echo $row2['codigoPostal'] ?>" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Estado</label>
@@ -146,7 +146,7 @@ $row2=mysqli_fetch_assoc($res2);
                             </div>
                             <div class="form-group">
                                 <label>Número Exterior</label>
-                                <input type="text" name="numeroExterior" class="form-control" value="<?php echo $row2['numeroExterior'] ?>" required="required">
+                                <input type="number" name="numeroExterior" class="form-control" value="<?php echo $row2['numeroExterior'] ?>" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Número Interior</label>

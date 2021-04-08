@@ -1,9 +1,8 @@
 <?php
 
 include_once "../../conexion.php";
-$con=mysqli_connect($host,$user,$pass,$db);
 
-
+$con=mysqli_connect($host ,$user,$pass,$db);
 
 
 if(isset($_REQUEST['guardar'])){
@@ -18,7 +17,7 @@ if(isset($_REQUEST['guardar'])){
     $colonia=mysqli_real_escape_string($con,$_REQUEST['colonia']??'');
     $codigoPostal=mysqli_real_escape_string($con,$_REQUEST['codigoPostal']??'');
     $estado=mysqli_real_escape_string($con,$_REQUEST['estado']??'');
-    $numeroInterior=mysqli_real_escape_string($con,$_REQUEST['numeroInterior']??'');
+    $numeroInterior=mysqli_real_escape_string($con,$_REQUEST['numeroInterio']??'');
     $numeroExterior=mysqli_real_escape_string($con,$_REQUEST['numeroExterior']??'');
 
 
@@ -34,12 +33,12 @@ if(isset($_REQUEST['guardar'])){
 
 
     $query="INSERT INTO empleado
-        (emailEmpleado,passwordEmpleado,nombreEmpleado,apellidoEmpleado,telefonoempleado,acceso,suledo,idDireccion) VALUES
+        (emailEmpleado,passwordEmpleado,nombreEmpleado,apellidoEmpleado,telefonoEmpleado,acceso,suledo,idDireccion) VALUES
         ('".$email."','".$pass."','".$nombre."','".$apellido."','".$telefono."','".$acceso."','".$Sueldo."','".$idDireccionForanea."')";
     $res=mysqli_query($con,$query);
 
     if($res){
-        echo '<meta http-equiv="refresh" content="0; url=dashboard.php?modulo=empleados&mensaje=Empleado creado"/>';
+        echo '<meta http-equiv="refresh" content="0; url=dashboard.php?modulo=crearEmpleado&mensaje=Empleado creado"/>';
     }else{
         ?>
 
@@ -60,8 +59,10 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
+            <div class="col-md-4">
 
-            <div class="col-md-12">
+            </div>
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Crear Empleado</strong>
@@ -86,7 +87,7 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
                             </div>
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <input type="number" name="telefono" class="form-control" required="required">
+                                <input type="tel" name="telefono" class="form-control" required="required">
                             </div>
 
 
@@ -119,7 +120,7 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
                                 <input type="text" name="colonia" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Codigo Postal</label>
+                                <label>Código Postal</label>
                                 <input type="text" name="codigoPostal" class="form-control" required="required">
                             </div>
                             <div class="form-group">
@@ -127,12 +128,12 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
                                 <input type="text" name="estado" class="form-control" required="required">
                             </div>
                             <div class="form-group">
-                                <label>Numero Interior</label>
-                                <input type="number" name="numeroInterior" class="form-control">
-                            </div>
-                            <div class="form-group">
                                 <label>Numero Exterior</label>
                                 <input type="number" name="numeroExterior" class="form-control" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label>Número Interior</label>
+                                <input type="text" name="numeroInterior" class="form-control">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary" name="guardar">Guardar</button>
@@ -141,6 +142,7 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
 
                         </form>
                     </div>
+
                 </div>
             </div>
 
