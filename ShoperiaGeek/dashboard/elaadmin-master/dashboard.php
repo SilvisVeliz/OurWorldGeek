@@ -101,7 +101,7 @@ $modulo=$_REQUEST['modulo']??'';
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Gráficos</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-line-chart"></i><a href="dashboard.php?modulo=graficos">Resumen</a></li>
-
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="dashboard.php?modulo=estadisticas">Estadísticas</a></li>
                         </ul>
                     </li>
 
@@ -138,7 +138,7 @@ $modulo=$_REQUEST['modulo']??'';
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-shopping-bag"></i><a href="dashboard.php?modulo=productos">Productos</a></li>
                             <li><i class="menu-icon fa fa-address-book-o"></i><a href="dashboard.php?modulo=proveedores">Proveedores</a></li>
-                            <li><i class="menu-icon fa fa-address-book-o"></i><a href="dashboard.php?modulo=proveedores">Categorías</a></li>
+                            <li><i class="menu-icon fa fa-address-book-o"></i><a href="dashboard.php?modulo=categorias">Categorías</a></li>
 
                         </ul>
                     </li>
@@ -251,6 +251,15 @@ $modulo=$_REQUEST['modulo']??'';
             }
             if($modulo=="proveedores"){
                 include_once "proveedores.php";
+            }
+            if($modulo=="estadisticas"){
+                include_once "estadisticas.php";
+            }
+            if($modulo=="categorias"){
+                include_once "categorias.php";
+            }
+            if($modulo=="crearCategoria"){
+                include_once "crearCategoria.php";
             }
 
 
