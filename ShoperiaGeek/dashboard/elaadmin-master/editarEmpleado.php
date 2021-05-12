@@ -27,7 +27,7 @@ if(isset($_REQUEST['guardar'])){
 
 
     $query="UPDATE empleado SET
-        emailEmpleado='".$email."',passwordEmpleado='".$pass."',nombreEmpleado='".$nombre."',apellidoEmpleado='".$apellido."',telefonoempleado='".$telefono."',
+        emailEmpleado='".$email."',passwordEmpleado='".$pass."',nombreEmpleado='".$nombre."',apellidoEmpleado='".$apellido."',telefonoEmpleado='".$telefono."',
         acceso='".$acceso."', Suledo='".$sueldo."'
         where idEmpleado='".$id."';
         ";
@@ -43,7 +43,7 @@ if(isset($_REQUEST['guardar'])){
             ?>
 
             <div class="alert alert-danger role="alert>
-                Error al editar empleado <?php echo mysqli_error($con);?>
+                Error al editar dirección <?php echo mysqli_error($con);?>
             </div>
 
             <?php
@@ -74,10 +74,8 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
 <div class="content">
     <div class="animated fadeIn">
         <div class="row">
-            <div class="col-md-4">
-
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-3"> </div>
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Editar Empleado </strong>
@@ -90,7 +88,7 @@ $queryNombreAcceso=mysqli_query($con,"SELECT acceso from empleado GROUP BY acces
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password" class="form-control" required="required">
+                                <input type="hidden" name="password" class="form-control" value="<?php echo $row['passwordEmpleado']; ?>" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Nombre</label>

@@ -87,107 +87,7 @@ $datosPedidos=rtrim($datosPedidos,",");
         <!-- Orders -->
         <div class="orders">
             <div class="row">
-                <div class="col-xl-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="box-title">Órdenes </h4>
-                        </div>
-                        <div class="card-body--">
-                            <div class="table-stats order-table ov-h">
-                                <table class="table ">
-                                    <thead>
-                                    <tr>
-                                        <th class="serial">#</th>
-                                        <th class="avatar">Avatar</th>
-                                        <th>ID</th>
-                                        <th>Nombre</th>
-                                        <th>Producto</th>
-                                        <th>Total</th>
-                                        <th>Estado</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td class="serial">1.</td>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="images/avatar/1.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #19 </td>
-                                        <td>  <span class="name">Lourdes Millan</span> </td>
-                                        <td> <span class="product">Playera de Justice League</span> </td>
-                                        <td><span class="count">700</span></td>
-                                        <td>
-                                            <span class="badge badge-complete">Completado</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">2.</td>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="images/avatar/2.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #06 </td>
-                                        <td>  <span class="name">Gregory Dixon</span> </td>
-                                        <td> <span class="product">Reloj de bolsillo de Edward Elric: FullMetal Alchemist</span> </td>
-                                        <td><span class="count">450</span></td>
-                                        <td>
-                                            <span class="badge badge-complete">Completado</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">3.</td>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="images/avatar/3.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #67 </td>
-                                        <td>  <span class="name">Emmanuel Trellez</span> </td>
-                                        <td> <span class="product">Juego de mesa: Werewolf Ultimate</span> </td>
-                                        <td><span class="count">1000</span></td>
-                                        <td>
-                                            <span class="badge badge-complete">Completado</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="serial">4.</td>
-                                        <td class="avatar">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="images/avatar/4.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #54 </td>
-                                        <td>  <span class="name">Diego Durón</span> </td>
-                                        <td> <span class="product">Figura de Akizuki: Kancolle</span> </td>
-                                        <td><span class="count">900</span></td>
-                                        <td>
-                                            <span class="badge badge-pending">Pendiente</span>
-                                        </td>
-                                    </tr>
-                                    <tr class=" pb-0">
-                                        <td class="serial">5.</td>
-                                        <td class="avatar pb-0">
-                                            <div class="round-img">
-                                                <a href="#"><img class="rounded-circle" src="images/avatar/6.jpg" alt=""></a>
-                                            </div>
-                                        </td>
-                                        <td> #89 </td>
-                                        <td>  <span class="name">Jonatan Hdz.</span> </td>
-                                        <td> <span class="product">Llaves de Resident Evil como Llaveros.</span> </td>
-                                        <td><span class="count">500</span></td>
-                                        <td>
-                                            <span class="badge badge-complete">Completado</span>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div> <!-- /.table-stats -->
-                        </div>
-                    </div> <!-- /.card -->
-                </div>  <!-- /.col-lg-8 -->
+
 
                 <div class="col-xl-4">
                     <div class="row">
@@ -215,7 +115,7 @@ $datosPedidos=rtrim($datosPedidos,",");
                             </div>
                         </div>
 
-                    </div>
+                    </div><!-- /.row -->
                 </div> <!-- /.col-md-4 -->
             </div>
         </div>

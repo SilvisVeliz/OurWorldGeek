@@ -43,6 +43,74 @@ if(isset($_REQUEST['idBorrar'])){
                     </div>
                     -->
                     <div class="card-body">
+                       <!-- aqui empieza la tabla de productos-->
+                       
+                       <!--
+                       <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                           <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Descripción</th>
+                                <th>Categoria</th>
+                                <?php
+                                $id1=mysqli_real_escape_string($con, $_REQUEST['id']??'');
+                                $query1="SELECT idEmpleado,acceso from empleado where idEmpleado='". $_SESSION['idEmpleado']."'; ";
+                                $res1=mysqli_query($con,$query1);
+                                $row1=mysqli_fetch_assoc($res1);
+
+                                if($row1['acceso'] =='Administrador'){
+                                    ?>
+                                    <th>Acciones
+                                        <a href="dashboard.php?modulo=crearProducto"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </th>
+                                    <?php
+                                }
+                                ?>
+                            </tr>
+
+                            <?php
+                                $query="SELECT * from producto";
+                                $res=mysqli_query($con,$query);
+
+
+                                while($row=mysqli_fetch_assoc($res)){
+                            ?>
+
+                            <tr>
+                                <td><?php echo $row['nombreProducto']  ?></td>
+                                <td><?php echo $row['precioOriginal']  ?></td>
+                                <td><?php echo $row['descripcion']  ?></td>
+                                <td><?php echo $row['idCategoria']  ?></td>
+                                
+                                <?php
+                                    $id1=mysqli_real_escape_string($con, $_REQUEST['id']??'');
+                                    $query1="SELECT idEmpleado,acceso from empleado where idEmpleado='". $_SESSION['idEmpleado']."'; ";
+                                    $res1=mysqli_query($con,$query1);
+                                    $row1=mysqli_fetch_assoc($res1);
+
+                                    if($row1['acceso'] =='Administrador'){
+                                        ?>
+                                        <th>
+                                            <a href="dashboard.php?modulo=editarProducto&id=<?php echo $row['idProducto'] ?>" style="margin-right: 10%"><i class="fa fa-edit"></i></a>
+                                            <a href="dashboard.php?modulo=productos&idBorrar=<?php echo $row['idProducto'] ?>" class="text-danger borrar"><i class="fa fa-trash"></i></a>
+                                        </th>
+                                        <?php
+                                    }
+                                    ?>
+                            </tr>
+                            
+                            <?php
+                            }
+                            ?>
+                           </thead>
+                            
+                            
+                        </table>
+                        -->
+                        
+<!--versión antigua y mejor-->
+                   
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
                             <thead>
                             <tr>
@@ -81,10 +149,10 @@ if(isset($_REQUEST['idBorrar'])){
                                 ?>
 
                                 <tr>
-                                    <th> <?php echo $row['nombreProducto']  ?> </th>
-                                    <th> <?php echo $row['precioOriginal']  ?> </th>
-                                    <th> <?php echo $row['descripcion']  ?> </th>
-                                    <th> <?php echo $row['nombreCategoria']  ?> </th>
+                                    <td> <?php echo $row['nombreProducto']  ?> </td>
+                                    <td> <?php echo $row['precioOriginal']  ?> </td>
+                                    <td> <?php echo $row['descripcion']  ?> </td>
+                                    <td> <?php echo $row['nombreCategoria']  ?> </td>
 
                                     <?php
                                     $id1=mysqli_real_escape_string($con, $_REQUEST['id']??'');
@@ -94,10 +162,10 @@ if(isset($_REQUEST['idBorrar'])){
 
                                     if($row1['acceso'] =='Administrador'){
                                         ?>
-                                        <th>
+                                        <td>
                                             <a href="dashboard.php?modulo=editarProducto&id=<?php echo $row['idProducto'] ?>" style="margin-right: 10%"><i class="fa fa-edit"></i></a>
                                             <a href="dashboard.php?modulo=productos&idBorrar=<?php echo $row['idProducto'] ?>" class="text-danger borrar"><i class="fa fa-trash"></i></a>
-                                        </th>
+                                        </td>
                                         <?php
                                     }
                                     ?>
@@ -112,38 +180,49 @@ if(isset($_REQUEST['idBorrar'])){
                             ?>
                             </tbody>
                         </table>
+                        
+                    <!-- aqui termina la tabla de productos-->    
+                    
+                    <!-- aqui empieza la tabla de bitacora de productos-->
+                    <div class="card-header">
+                        <strong class="card-title">Bitacora de los Productos</strong>
+                    </div>
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                <tr>
-                    <td>id</td>
-                    <td>idProducto</td>
-                    <td>fecha</td>
-                    <td>responsable</td>
-                    <td>actividad realizada</td>
-                    <td>información actual</td>
-                    <td>información anterior</td>
-                </tr>
+                           <thead>
+                            <tr>
+                                <th>Número de bitacora</th>
+                                <th>idProducto</th>
+                                <th>Fecha</th>
+                                <th>Responsable</th>
+                                <th>Actividad realizada</th>
+                                <th>Cambios realizados</th>
+                                
+                            </tr>
 
-                <?php
-                $query="SELECT * from bitacoraproducto";
-                $res=mysqli_query($con,$query);
+                            <?php
+                                $query="SELECT * from bitacoraproducto";
+                                $res=mysqli_query($con,$query);
 
 
-                while($row=mysqli_fetch_assoc($res)){
-                ?>
+                                while($row=mysqli_fetch_assoc($res)){
+                            ?>
 
-                <tr>
-                    <td><?php echo $row['idBitacoraProducto']  ?></td>
-                    <td><?php echo $row['idProducto']  ?></td>
-                    <td><?php echo $row['fecha']  ?></td>
-                    <td><?php echo $row['responsable']  ?></td>
-                    <td><?php echo $row['actividad_realizada']  ?></td>
-                    <td><?php echo $row['informacion_actual']  ?></td>
-                    <td><?php echo $row['informacion_anterior']  ?></td>
-                </tr>
-                <?php
-                }
-                ?>    
-            </table>
+                            <tr>
+                                <td><?php echo $row['idBitacoraProducto']  ?></td>
+                                <td><?php echo $row['idProducto']  ?></td>
+                                <td><?php echo $row['fecha']  ?></td>
+                                <td><?php echo $row['responsable']  ?></td>
+                                <td><?php echo $row['actividad_realizada']  ?></td>
+                                <td><?php echo $row['informacion_actual']  ?></td>
+                                
+                            </tr>
+                            </thead>
+                            <?php
+                            }
+                            ?>    
+                        </table>
+                    <!-- aqui termina la tabla de bitacora de productos-->
+                   
                     </div>
                 </div>
             </div>

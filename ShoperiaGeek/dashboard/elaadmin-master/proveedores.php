@@ -110,7 +110,47 @@ if(isset($_REQUEST['idBorrar'])){
                             ?>
                             </tbody>
                         </table>
+                        <!--comienza bitacora-->
+                        <div class="card-header">
+                        <strong class="card-title">Bitacora de los Proveedores</strong>
                     </div>
+                        <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                           <thead>
+                            <tr>
+                                <th>Número de bitacora</th>
+                                <th>idProveedor</th>
+                                <th>Fecha</th>
+                                <th>Responsable</th>
+                                <th>Actividad realizada</th>
+                                <th>Cambios realizados</th>
+                                
+                            </tr>
+
+                            <?php
+                                $query="SELECT * from bitacoraproveedor";
+                                $res=mysqli_query($con,$query);
+
+
+                                while($row=mysqli_fetch_assoc($res)){
+                            ?>
+
+                            <tr>
+                                <td><?php echo $row['idBitacoraProveedor']  ?></td>
+                                <td><?php echo $row['idProveedor']  ?></td>
+                                <td><?php echo $row['fecha']  ?></td>
+                                <td><?php echo $row['responsable']  ?></td>
+                                <td><?php echo $row['actividad_realizada']  ?></td>
+                                <td><?php echo $row['informacion_actual']  ?></td>
+                                
+                            </tr>
+                            </thead>
+                            <?php
+                            }
+                            ?>    
+                        </table>
+                        <!--termina bitacora-->
+                    </div>
+                    
                 </div>
             </div>
 

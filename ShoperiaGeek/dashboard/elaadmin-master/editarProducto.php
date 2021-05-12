@@ -108,14 +108,16 @@ $queryNombreCategorias=mysqli_query($con,"SELECT idCategoria,nombreCategoria fro
                                 <label>Precio descuento</label>
                                 <input type="number" name="precioDescuento" class="form-control" value="<?php echo $row['precioDescuento']; ?>"required="required">
                             </div>
+                            
                             <div class="form-group">
                                 <label>Descripción</label>
                                 <input type="text" name="descripcion" class="form-control" value="<?php echo $row['descripcion'] ?>" required="required">
                             </div>
 
+
                             <div class="form-group">
-                                <label>Nombre Categoria</label>
-                                <label type="text" class="form-control" required="required"><?php echo $row4['nombreCategoria'] ?>
+                                <label>Nombre Categoría</label>
+                                <label type="text" class="form-control" required="required"><?php echo $row4['nombreCategoria'] ?></label>
                             </div>
                             <div class="form-group">
                                 <select name="nombreCategoria">
@@ -129,9 +131,11 @@ $queryNombreCategorias=mysqli_query($con,"SELECT idCategoria,nombreCategoria fro
                                     ?>
                                 </select>
                             </div>
+                           
+                            
                             <div class="form-group">
                                 <label>Nombre Proveedor</label>
-                                <label type="text" class="form-control" required="required"><?php echo $row2['nombreProveedor'] ?>
+                                <label type="text" class="form-control" required="required"><?php echo $row2['nombreProveedor'] ?></label>
                             </div>
                             <div class="form-group">
                                 <select name="nombreProveedor">

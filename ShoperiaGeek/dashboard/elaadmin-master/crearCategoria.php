@@ -7,7 +7,7 @@ $con=mysqli_connect($host,$user,$pass,$db);
 
 
 if(isset($_REQUEST['guardar'])){
-    $nombre=mysqli_real_escape_string($con,$_REQUEST['nombreCategoria']??'');
+    $nombre=mysqli_real_escape_string($con,$_REQUEST['nombre']??'');
 
 
 

@@ -109,30 +109,45 @@
                             ?>
                             </tbody>
                         </table>
+                        
+                        <!--empieza tabla de bitacora clientes-->
+                        <!--empieza hombres trabajando-->
+                        
+                        <div class="card-header">
+                        <strong class="card-title">Bitacora de los Clientes</strong>
+                    </div>
                         <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                <tr>
-                    <td>idCliente</td>
-                    <td>idProducto</td>
-                    <td>fecha</td>
-                </tr>
+                           <thead>
+                            <tr>
+                                <th>idCliente</th>
+                                <th>idProducto</th>
+                                <th>Fecha</th>
+                                
+                            </tr>
 
-                <?php
-                $query="SELECT * from bitacoracliente";
-                $res=mysqli_query($con,$query);
+                            <?php
+                                $query="SELECT * from bitacoracliente";
+                                $res=mysqli_query($con,$query);
 
 
-                while($row=mysqli_fetch_assoc($res)){
-                ?>
+                                while($row=mysqli_fetch_assoc($res)){
+                            ?>
 
-                <tr>
-                    <td><?php echo $row['idCliente']  ?></td>
-                    <td><?php echo $row['idProducto']  ?></td>
-                    <td><?php echo $row['fecha']  ?></td>
-                </tr>
-                <?php
-                }
-                ?>    
-            </table>
+                            <tr>
+                                <td><?php echo $row['idCliente']  ?></td>
+                                <td><?php echo $row['idProducto']  ?></td>
+                                <td><?php echo $row['fecha']  ?></td>
+
+                                
+                            </tr>
+                            </thead>
+                            <?php
+                            }
+                            ?>    
+                        </table>
+                        <!--termina hombres trabajando-->
+                    
+                   <!--termina bitacora clientes-->
                     </div>
                 </div>
             </div>

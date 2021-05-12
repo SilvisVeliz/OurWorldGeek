@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-04-2021 a las 08:22:59
+-- Tiempo de generación: 12-05-2021 a las 05:47:19
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -28,13 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bitacoracliente` (
-  `idBitacoraCliente` int(20) NOT NULL,
   `idCliente` int(20) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `responsable` varchar(30) NOT NULL,
-  `actividad_realizada` varchar(50) NOT NULL,
-  `informacion_actual` text NOT NULL,
-  `informacion_anterior` text NOT NULL
+  `idProducto` int(20) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -52,6 +48,13 @@ CREATE TABLE `bitacoraempleado` (
   `informacion_actual` text NOT NULL,
   `informacion_anterior` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `bitacoraempleado`
+--
+
+INSERT INTO `bitacoraempleado` (`idBitacoraEmpleado`, `idEmpleado`, `fecha`, `responsable`, `actividad_realizada`, `informacion_actual`, `informacion_anterior`) VALUES
+(1, 6, '2021-05-11 23:32:29', 'root@localhost', 'Se inserto nuevo empleado', 'informacion actual: Guadalupe Ssandoval lupis123@yahoo.com 123456789 Vendedor 1002 0 28 516e811154326823d6e34db27eecb013', '');
 
 -- --------------------------------------------------------
 
@@ -100,6 +103,22 @@ INSERT INTO `bitacoraproducto` (`idBitacoraProducto`, `idProducto`, `fecha`, `re
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `bitacoraproveedor`
+--
+
+CREATE TABLE `bitacoraproveedor` (
+  `idBitacoraProveedor` int(20) NOT NULL,
+  `idProveedor` int(20) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `responsable` varchar(30) NOT NULL,
+  `actividad_realizada` varchar(50) NOT NULL,
+  `informacion_actual` text NOT NULL,
+  `informacion_anterior` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `categoria`
 --
 
@@ -118,7 +137,8 @@ INSERT INTO `categoria` (`idCategoria`, `nombreCategoria`) VALUES
 (3, 'figuras cine'),
 (4, 'figuras manga'),
 (5, 'juegos de cartas'),
-(6, 'caricaturas');
+(6, 'caricaturas'),
+(8, '');
 
 -- --------------------------------------------------------
 
@@ -143,21 +163,51 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`idCliente`, `nombreCliente`, `apellidoCliente`, `emailCliente`, `telefonoCliente`, `idImagen`, `idDireccion`, `passwordCliente`) VALUES
 (1, 'Rosalia', 'Manriquez', 'RosaMan132@gmail.com', '5590875634', 1, 4, '700ab2794a2699c28cb3b5955f40ef83'),
-(2, 'Maria Josefa', 'Saiz', 'MaJoSa@outlook.com', '2229087564', 1, 5, '31928f9655c1db0bb28ca7db77341237'),
+(2, 'Maria Josefa', 'Saiz', 'MaJoSa@outlook.com', '2229087564', 1, 5, 'fe196833cc573a26b141ff1d2a35c9ae'),
 (3, 'Axel', 'Quintero', 'Axelito23@gmail.com', '6798234019', 1, 6, 'b9c91ac2d8398eb00af4e165cbf251fd'),
 (4, 'Isidro', 'Martinez', 'ILYisi0@hotmail.com', '5634243091', 1, 7, '0ee19b7f9245b22d0cac71378f11afab'),
 (5, 'Palmira', 'Alegre', 'AlePal009@gmail.com', '6344657893', 1, 8, 'de2a196cb812ef8abdb8f168dc2542c8'),
 (6, 'Xenia de Miguel', 'Anguiano', 'XeniaAnguiano2001@yahoo.com', '9086740581', 1, 9, 'eaf9d75b284899052f06020cd02abf71'),
 (7, 'Ruth', 'Rivero', 'RRUItv1@gmail.com', '5590091634', 1, 10, 'e4507bfbb85ab8ff5e22c1ac8923fba7'),
 (8, 'Maria Victoria', 'Ojeda', 'MVO@hotmail.com', '4491234567', 1, 11, '839c33f02c40067ed1bcd1da7381a7b7'),
-(9, 'Faustino', 'Vazquez', 'VazFa90@gmail.com', '6349087124', 1, 12, '6e062cc764217b45142eb3a4f97677ba'),
 (10, 'Yurena', 'Arias', 'yureyure2@gmail.com', '1209768542', 1, 13, '2b637a75e5d51d4e81c2d6e17d56955f'),
 (11, 'Carmen', 'Tudelo', 'tudelitok@hotmail.com', '3349053894', 1, 14, '2b637a75e5d51d4e81c2d6e17d56955f'),
 (12, 'Laura', 'Perdomo', 'lauraperdom0@gmail.com', '5545907612', 1, 15, '2b637a75e5d51d4e81c2d6e17d56955f'),
 (13, 'Amanda Rosal', 'Palacios', 'amandarosalpala@hotmail.com', '7074041532', 1, 16, 'cb1603a5b22dd6823a3e42c6896140be'),
-(14, 'Alexandru', 'Ares', 'aares@outlook.com', '6098763450', 1, 17, 'dfa6e19ce3d4e024f87eeb77c7e909dc'),
+(14, 'Alexandro', 'Ares', 'aares@outlook.com', '6098763450', 1, 17, 'fe196833cc573a26b141ff1d2a35c9ae'),
 (15, 'Miquel', 'Lloret', 'Loraloramiq@gmail.com', '4460981238', 1, 18, 'e743d0d097d5047f21b1020ef93dec9c'),
-(16, 'SILVIA RAQUEL', 'SERRANO VELIZ', 'silviaraquel110@gmail.com', '4493442718', 0, 22, 'cef4df772ab6d1020c8c7780ff31931e');
+(16, 'SILVIA RAQUEL', 'SERRANO VELIZ', 'silviaraquel110@gmail.com', '4493442718', 0, 22, 'cef4df772ab6d1020c8c7780ff31931e'),
+(17, 'Veronica', 'Pedroza', 'veronicapedrozza@hotmail.com', '4492451243', 0, 25, '4fe608a953ee1f3bcced45fd208f617d');
+
+--
+-- Disparadores `cliente`
+--
+DELIMITER $$
+CREATE TRIGGER `ClienteDelete` AFTER DELETE ON `cliente` FOR EACH ROW BEGIN
+INSERT INTO bitacoracliente(idCliente,responsable,actividad_realizada,informacion_actual)
+VALUES(OLD.idCliente,CURRENT_USER,'Se ELIMINO un cliente', concat('informacion anterior: ',OLD.nombreCliente,' ',OLD.apellidoCliente,' ',OLD.emailCliente,' ',OLD.telefonoCliente,' ',OLD.idImagen,'',OLD.idDireccion, '', OLD.passwordCliente));
+
+
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `ClienteInsertar` AFTER INSERT ON `cliente` FOR EACH ROW BEGIN
+INSERT INTO bitacoracliente(idCliente,responsable,actividad_realizada,informacion_actual)
+VALUES(NEW.idCliente,CURRENT_USER,'Se inserto nuevo cliente',concat('informacion actual: ',NEW.nombreCliente,' ',NEW.apellidoCliente,' ',NEW.emailCliente,' ',NEW.telefonoCliente,' ',NEW.idImagen,' ',NEW.idDireccion, '', NEW.passwordCliente));
+
+
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `ClienteUpdate` AFTER UPDATE ON `cliente` FOR EACH ROW BEGIN
+INSERT INTO bitacoracliente(idCliente,responsable,actividad_realizada,informacion_actual)
+VALUES(OLD.idCliente,CURRENT_USER,'Se actualizo un cliente',concat('informacion actual: ',OLD.nombreCliente,' ',OLD.apellidoCliente,' ',OLD.emailCliente,' ',OLD.telefonoCliente,' ',OLD.idImagen,'',OLD.idDireccion, '', OLD.passwordCliente), concat('informacion actual: ',NEW.nombreCliente,' ',NEW.apellidoCliente,' ',NEW.emailCliente,' ',NEW.telefonoCliente,' ',NEW.idImagen,' ',NEW.idDireccion, '', NEW.passwordCliente));
+
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -214,27 +264,36 @@ CREATE TABLE `detallepedido` (
 --
 
 INSERT INTO `detallepedido` (`idPedido`, `idProducto`, `cantidadCompra`, `status`) VALUES
-(1, 16, 1, 'Pendiente'),
-(2, 5, 1, 'Completado'),
-(3, 13, 1, 'Completado'),
-(3, 16, 1, 'Completado'),
-(4, 7, 1, 'Completado'),
-(5, 12, 1, 'Completado'),
-(6, 12, 1, 'Pendiente'),
-(7, 11, 1, 'Completado'),
-(8, 8, 1, 'Pendiente'),
-(9, 3, 1, 'Pendiente'),
-(9, 6, 1, 'Completado'),
-(10, 5, 1, 'Pendiente'),
-(11, 20, 1, 'Pendiente'),
+(1, 16, 1, 'Completado'),
+(2, 5, 1, 'completado'),
+(3, 13, 1, 'completado'),
+(3, 16, 1, 'completado'),
+(4, 7, 1, 'completado'),
+(5, 12, 1, 'completado'),
+(6, 12, 1, 'completado'),
+(7, 11, 1, 'completado'),
+(8, 8, 1, 'completado'),
+(9, 3, 1, 'completado'),
+(9, 6, 1, 'completado'),
+(10, 5, 1, 'Completado'),
+(11, 20, 1, 'Completado'),
 (12, 13, 1, 'Completado'),
-(13, 6, 1, 'Pendiente'),
+(13, 6, 1, 'Completado'),
 (13, 9, 1, 'Completado'),
 (14, 13, 1, 'Completado'),
 (15, 9, 1, 'Completado'),
-(16, 20, 1, 'Pendiente'),
-(17, 2, 1, 'Pendiente'),
-(18, 18, 1, 'Completado');
+(16, 20, 1, 'Completado'),
+(17, 2, 1, 'Completado'),
+(18, 18, 1, 'Completado'),
+(18, 18, 1, 'Completado'),
+(19, 11, 1, 'Pendiente'),
+(20, 13, 1, 'Completado'),
+(21, 18, 1, 'Pendiente'),
+(22, 2, 1, 'Pendiente'),
+(23, 18, 1, 'Pendiente'),
+(24, 19, 1, 'Pendiente'),
+(25, 20, 1, 'Pendiente'),
+(26, 7, 1, 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -258,10 +317,10 @@ CREATE TABLE `direccion` (
 
 INSERT INTO `direccion` (`idDireccion`, `calle`, `colonia`, `codigoPostal`, `Estado`, `numeroInterio`, `numeroExterior`) VALUES
 (1, 'Destornillador Nave', 'Pol Store', 41008, 'Aguascalientes', 2, 5),
-(2, '31Pte juarez', 'Colonia Esmeralda', 72400, 'Aguascalientes', 3528, 2),
+(2, '31Pte juarez', 'Colonia Esmeralda', 72400, 'Aguascalientes', 0, 2),
 (3, 'centro de la comunidad', 'san antonio', 45678, 'Aguascalientes', 43, 1),
 (4, 'calle Agustin Lara', 'Ex-Normal tuxtepec', 68370, 'Guerrero', 909, 0),
-(5, 'av independencia', 'centro tuxtepex', 68300, 'Sinaloa', 241, 3),
+(5, 'av independencia', 'centro tuxtepex', 68300, 'Sinaloa', 241, 69),
 (6, 'carretera loma alta', 'lomas del pedregal', 68306, 'Veracruz', 2345, 0),
 (7, 'av 10 de mayo', 'la piragua', 60978, 'Guadalajara', 243, 9),
 (8, 'calle matamoros', 'temazcal', 12093, 'Ciudad de Mexico', 31, 0),
@@ -270,15 +329,21 @@ INSERT INTO `direccion` (`idDireccion`, `calle`, `colonia`, `codigoPostal`, `Est
 (11, 'avenida niños herores', 'boxtha chico', 34560, 'Guanajuato', 31, 4),
 (12, 'plaza constitucion', 'demacu', 66786, 'Monterrey', 234, 1),
 (13, 'adolfo lopez mateos', 'santa maria amajac', 20298, 'Chihuahua', 1236, 1),
-(14, 'felipe angeles', 'san antonio zaragoza', 45678, 'Queretaro', 123, 0),
+(14, 'felipe angeles', 'San Antonio', 45678, 'Queretaro', 123, 0),
 (15, 'caynajay', 'lagunilla', 90870, 'Baja california norte', 10, 0),
 (16, 'jose maria morelos', 'bomintzac', 9768, 'Sonora', 12, 0),
-(17, 'ejercito mexicano', 'fresno', 46758, 'Tlaxcala', 906, 2),
+(17, 'Ejército Mexicano', 'fresno', 46758, 'Tlaxcala', 906, 2),
 (18, 'av 16 de julio', 'caxuxi', 90878, 'Aguascalientes', 2343, 7),
 (19, 'calle montario', 'vicente guerrero', 78932, 'Guerrero', 133, 0),
 (20, 'av mariano polero', 'palmero', 89321, 'Michoacan', 890, 500),
 (21, 'palomito viajero', 'sierra madre', 90832, 'Yucatan', 233, 1),
-(22, 'de la loma', 'lomitas', 20199, 'Aguascalientes', 0, 508);
+(22, 'de la loma', 'lomitas', 20199, 'Aguascalientes', 0, 508),
+(23, 'chapulin', 'chapulin', 29080, 'Aguascalientes', 1, 290),
+(24, 'fianchetito', 'lomas del gambito', 90340, 'san luis potosi', 0, 2342),
+(25, 'franchesco riviera', 'autores', 20900, 'Aguascalientes', 234, 1),
+(26, 'palmeras altas', 'De la palma', 90890, 'Nuevo León', 123, 1),
+(27, 'del santoral', 'sontis', 20900, 'Guanajuato', 140, 3),
+(28, 'del valle', 'valles', 12340, 'Durango', 0, 43);
 
 -- --------------------------------------------------------
 
@@ -306,7 +371,40 @@ CREATE TABLE `empleado` (
 INSERT INTO `empleado` (`idEmpleado`, `nombreEmpleado`, `apellidoEmpleado`, `emailEmpleado`, `telefonoEmpleado`, `acceso`, `Suledo`, `idImagen`, `idDireccion`, `passwordEmpleado`) VALUES
 (1, 'Eleazar', 'Palacios', 'ElePala90@gmail.com', '4567890321', 'Administrador', '8900', 1, 19, 'fe196833cc573a26b141ff1d2a35c9ae'),
 (2, 'Ana Lizbeth', 'Covarrubias', 'AnaLiz91@gmail.com', '4669871430', 'Administrador', '5670', 2, 20, '028d8b722c6b3ccc786f774b402e30c8'),
-(3, 'Gerardo', 'Montañez', 'GeraMon92@gmail.com', '3215678904', 'Vendedor', '5670', 3, 21, '29f91d161732d4da03314773209c79f6');
+(3, 'Gerardo', 'Montañez', 'GeraMon92@gmail.com', '3215678904', 'Vendedor', '5670', 3, 21, '29f91d161732d4da03314773209c79f6'),
+(4, 'Yahaira', 'Ornelas', 'YahairaOrnelas@gmail.com', '4498907856', 'Vendedor', '1209', 0, 23, 'dad0f4f285ff837167b89106b9341678'),
+(5, 'ana lizette', 'villalobos', 'ana.lizette02@gmail.com', '5568091435', 'Vendedor', '1200', 0, 24, '294c05193c5a7bdf56994343d00cc1a5'),
+(6, 'Guadalupe', 'Ssandoval', 'lupis123@yahoo.com', '123456789', 'Vendedor', '1002', 0, 28, '516e811154326823d6e34db27eecb013');
+
+--
+-- Disparadores `empleado`
+--
+DELIMITER $$
+CREATE TRIGGER `EmpleadoDelete` AFTER DELETE ON `empleado` FOR EACH ROW BEGIN
+INSERT INTO bitacoraempleado(idEmpleado,responsable,actividad_realizada,informacion_actual)
+VALUES(OLD.idEmpleado,CURRENT_USER,'Se ELIMINO un empleado',concat('informacion anterior: ',OLD.nombreEmpleado,' ',OLD.apellidoEmpleado,' ',OLD.emailEmpleado,' ',OLD.telefonoEmpleado,' ',OLD.acceso,' ',OLD.Suledo,' ', OLD.idImagen,' ', OLD.idDireccion,' ', OLD.passwordEmpleado));
+
+
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `EmpleadoInsertar` AFTER INSERT ON `empleado` FOR EACH ROW BEGIN
+INSERT INTO bitacoraempleado(idEmpleado,responsable,actividad_realizada,informacion_actual)
+VALUES(NEW.idEmpleado,CURRENT_USER,'Se inserto nuevo empleado',concat('informacion actual: ',NEW.nombreEmpleado,' ',NEW.apellidoEmpleado,' ',NEW.emailEmpleado,' ',NEW.telefonoEmpleado,' ',NEW.acceso,' ', NEW.Suledo,' ', NEW.idImagen,' ', NEW.idDireccion,' ', NEW.passwordEmpleado));
+
+
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `EmpleadoUpdate` AFTER UPDATE ON `empleado` FOR EACH ROW BEGIN
+INSERT INTO bitacoraempleado(idEmpleado,responsable,actividad_realizada,informacion_actual)
+VALUES(OLD.idEmpleado,CURRENT_USER,'Se actualizo un empleado',concat('informacion actual: ',OLD.nombreEmpleado,' ',OLD.apellidoEmpleado,' ',OLD.emailEmpleado,' ',OLD.telefonoEmpleado,' ',OLD.acceso,' ',OLD.Suledo,' ', OLD.idImagen,' ', OLD.idDireccion,' ', OLD.passwordEmpleado), concat('informacion actual: ',NEW.nombreEmpleado,' ',NEW.apellidoEmpleado,' ',NEW.emailEmpleado,' ',NEW.telefonoEmpleado,' ',NEW.acceso,' ', NEW.Suledo,' ', NEW.idImagen,' ', NEW.idDireccion,' ', NEW.passwordEmpleado));
+
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -434,7 +532,15 @@ INSERT INTO `pedido` (`idPedido`, `idCliente`, `fechaPedido`, `costoTotal`, `idM
 (15, 12, '2020-03-13 06:00:00', '199.00', 2),
 (16, 12, '2020-12-05 06:00:00', '199.00', 0),
 (17, 7, '2020-12-06 06:00:00', '220.00', 0),
-(18, 1, '2020-11-10 06:00:00', '899.00', 0);
+(18, 1, '2020-11-10 06:00:00', '899.00', 0),
+(19, 4, '2021-04-10 11:45:00', '699.00', 1),
+(20, 18, '2021-11-03 08:09:00', '700.00', 2),
+(21, 4, '2021-05-03 06:56:00', '899.00', 2),
+(22, 18, '2021-05-09 17:28:00', '220.00', 1),
+(23, 15, '2021-05-11 10:27:00', '899.00', 2),
+(24, 11, '2021-05-10 07:30:00', '199.00', 2),
+(25, 9, '2021-05-07 14:19:00', '199.00', 1),
+(26, 1, '2021-05-02 12:51:00', '599.00', 1);
 
 -- --------------------------------------------------------
 
@@ -484,7 +590,7 @@ INSERT INTO `producto` (`idProducto`, `nombreProducto`, `precioOriginal`, `preci
 DELIMITER $$
 CREATE TRIGGER `ProductoDelete` AFTER DELETE ON `producto` FOR EACH ROW BEGIN
 INSERT INTO bitacoraproducto(idProducto,responsable,actividad_realizada,informacion_actual)
-VALUES(OLD.idProducto,CURRENT_USER,'Se ELIMINO un producto',concat('informacion anterior: ',OLD.nombreProducto,' ',OLD.precioOriginal,' ',OLD.precioDescuento,' ',OLD.descripcion,' ',OLD.idFranquicia,' ',OLD.idCategoria,'',OLD.idProveedor));
+VALUES(OLD.idProducto,CURRENT_USER,'Se ELIMINO un producto',concat('informacion anterior: ',OLD.nombreProducto,' ',OLD.precioOriginal,' ',OLD.precioDescuento,' ',OLD.descripcion,' ',OLD.idCategoria,'',OLD.idProveedor));
 
 
 END
@@ -493,7 +599,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `ProductoInsertar` AFTER INSERT ON `producto` FOR EACH ROW BEGIN
 INSERT INTO bitacoraproducto(idProducto,responsable,actividad_realizada,informacion_actual)
-VALUES(NEW.idProducto,CURRENT_USER,'Se inserto nuevo producto',concat('informacion actual: ',NEW.nombreProducto,' ',NEW.precioOriginal,' ',NEW.precioDescuento,' ',NEW.descripcion,' ',NEW.idFranquicia,' ',NEW.idCategoria,' ',NEW.idProveedor));
+VALUES(NEW.idProducto,CURRENT_USER,'Se inserto nuevo producto',concat('informacion actual: ',NEW.nombreProducto,' ',NEW.precioOriginal,' ',NEW.precioDescuento,' ',NEW.descripcion,' ',NEW.idCategoria,' ',NEW.idProveedor));
 
 
 END
@@ -502,7 +608,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `ProductoUpdate` AFTER UPDATE ON `producto` FOR EACH ROW BEGIN
 INSERT INTO bitacoraproducto(idProducto,responsable,actividad_realizada,informacion_actual)
-VALUES(OLD.idProducto,CURRENT_USER,'Se actualizo un producto',concat('informacion actual: ',OLD.nombreProducto,' ',OLD.precioOriginal,' ',OLD.precioDescuento,' ',OLD.descripcion,' ',OLD.idFranquicia,' ',OLD.idCategoria,' ',OLD.idProveedor), concat('informacion actual: ',NEW.nombreProducto,' ',NEW.precioOriginal,' ',NEW.precioDescuento,' ',NEW.descripcion,' ',NEW.idFranquicia,' ',NEW.idCategoria,' ',NEW.idProveedor));
+VALUES(OLD.idProducto,CURRENT_USER,'Se actualizo un producto',concat('informacion actual: ',OLD.nombreProducto,' ',OLD.precioOriginal,' ',OLD.precioDescuento,' ',OLD.descripcion,' ',OLD.idCategoria,' ',OLD.idProveedor), concat('informacion actual: ',NEW.nombreProducto,' ',NEW.precioOriginal,' ',NEW.precioDescuento,' ',NEW.descripcion,' ',NEW.idCategoria,' ',NEW.idProveedor));
 
 END
 $$
@@ -564,9 +670,38 @@ CREATE TABLE `proveedor` (
 --
 
 INSERT INTO `proveedor` (`idProveedor`, `nombreProveedor`, `emailProveedor`, `telefonoProveedor`, `idDireccion`) VALUES
-(1, 'Last Level', 'info@lastlevel.es', '34954368866', 2),
+(1, 'Last Level', 'info@lastlevel.es', '34954368899', 2),
 (2, 'Geek Corner', 'contacto@geekcorner.mx', '2228895097', 1),
 (3, 'SuperGeek', 'mayoreo@supergeek.com.mx', '2228895097', 3);
+
+--
+-- Disparadores `proveedor`
+--
+DELIMITER $$
+CREATE TRIGGER `ProveedorDelete` AFTER DELETE ON `proveedor` FOR EACH ROW BEGIN
+INSERT INTO bitacoraproveedor(idProveedor,responsable,actividad_realizada,informacion_actual)
+VALUES(OLD.idProveedor,CURRENT_USER,'Se ELIMINO un proveedor', concat('informacion anterior: ',OLD.nombreProveedor,' ',OLD.emailProveedor,' ',OLD.telefonoProveedor,' ',OLD.idDireccion));
+
+
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `ProveedorInsertar` AFTER INSERT ON `proveedor` FOR EACH ROW BEGIN
+INSERT INTO bitacoraproveedor(idProveedor,responsable,actividad_realizada,informacion_actual)
+VALUES(NEW.idProveedor,CURRENT_USER,'Se inserto nuevo proveedor',concat('informacion actual: ',NEW.nombreProveedor,' ',NEW.emailProveedor,' ',NEW.telefonoProveedor,' ',NEW.idDireccion));
+
+
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `ProveedorUpdate` AFTER UPDATE ON `proveedor` FOR EACH ROW BEGIN
+INSERT INTO bitacoraproveedor(idProveedor,responsable,actividad_realizada,informacion_actual)
+VALUES(OLD.idProveedor,CURRENT_USER,'Se actualizo un proveedor',concat('informacion actual: ',OLD.nombreProveedor,' ',OLD.emailProveedor,' ',OLD.telefonoProveedor,' ',OLD.idDireccion), concat('informacion actual: ',NEW.nombreProveedor,' ',NEW.emailProveedor,' ',NEW.telefonoProveedor,' ',NEW.idDireccion));
+END
+$$
+DELIMITER ;
 
 --
 -- Índices para tablas volcadas
@@ -576,7 +711,7 @@ INSERT INTO `proveedor` (`idProveedor`, `nombreProveedor`, `emailProveedor`, `te
 -- Indices de la tabla `bitacoracliente`
 --
 ALTER TABLE `bitacoracliente`
-  ADD PRIMARY KEY (`idBitacoraCliente`);
+  ADD KEY `idCliente` (`idCliente`,`idProducto`);
 
 --
 -- Indices de la tabla `bitacoraempleado`
@@ -655,16 +790,10 @@ ALTER TABLE `proveedor`
 --
 
 --
--- AUTO_INCREMENT de la tabla `bitacoracliente`
---
-ALTER TABLE `bitacoracliente`
-  MODIFY `idBitacoraCliente` int(20) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `bitacoraempleado`
 --
 ALTER TABLE `bitacoraempleado`
-  MODIFY `idBitacoraEmpleado` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBitacoraEmpleado` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `bitacoraproducto`
@@ -676,13 +805,13 @@ ALTER TABLE `bitacoraproducto`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idCategoria` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idCategoria` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idCliente` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `comentario`
@@ -694,13 +823,13 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
-  MODIFY `idDireccion` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idDireccion` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `idEmpleado` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idEmpleado` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `imagen`
@@ -718,13 +847,13 @@ ALTER TABLE `metodopago`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idPedido` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idPedido` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `idProducto` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idProducto` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`

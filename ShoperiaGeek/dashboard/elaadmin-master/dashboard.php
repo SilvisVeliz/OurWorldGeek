@@ -186,7 +186,7 @@ $modulo=$_REQUEST['modulo']??'';
                             <!--
                             <a class="nav-link" href="dashboard.php?modulo=editarUsuario&id=<?php echo $_SESSION['id']; ?>">Editar Perfil</a>
                             -->
-                            <a class="nav-link" href="#"></i>Configuración</a>
+                            <a class="nav-link" href="#">Configuración</a> <!--quite lo de </i>-->
 
                             <a class="nav-link" href="../../index.php?modulo=&sesion=cerrar" title="Cerrar sesion"><i class="fa fa-power -off"></i>Salir</a>
                         </div>
@@ -260,6 +260,9 @@ $modulo=$_REQUEST['modulo']??'';
             }
             if($modulo=="crearCategoria"){
                 include_once "crearCategoria.php";
+            }
+            if($modulo=="editarCategoria"){
+                include_once "editarCategoria.php";
             }
 
 
