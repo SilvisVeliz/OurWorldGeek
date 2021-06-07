@@ -122,6 +122,17 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
                                             <?php
                                             }
 
+                                        // para añadir al carrito
+                                            $id=mysqli_real_escape_string($con,$_REQUEST['id']??'');
+                                            $queryProducto="SELECT producto.idProducto, producto.nombreProducto, producto.precioOriginal, producto.precioDescuento,producto.descripcion, inventario.cantidadInventario,categoria.nombreCategoria,imagen.direccionImagen
+                                            from producto 
+                                            INNER JOIN inventario ON producto.idProducto=inventario.idProducto
+                                            INNER JOIN categoria ON categoria.idCategoria=producto.idCategoria
+                                            INNER JOIN producto_imagen ON producto_imagen.idProducto=producto.idProducto 
+                                            INNER JOIN imagen ON imagen.idImagen=producto_imagen.idImagen
+                                            WHERE producto.idProducto='$id';";
+                                            $resProducto=mysqli_query($con,$queryProducto);
+                                            $rowProducto=mysqli_fetch_assoc($resProducto);
                                         ?>
 
 
@@ -131,9 +142,7 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
                                             <a href="index.php?modulo=detalleProducto&id=<?php echo $row['idProducto'] ?>" class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp"> Vista rápida</span></a>
                                         </div>
                                     </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
-                                    </div>
+
                                 </div>
                                 <?php
                             }
@@ -254,9 +263,8 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
                                                 <a href="index.php?modulo=detalleProducto&id=<?php echo $row['idProducto'] ?>" class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp"> Vista rápida</span></a>
                                             </div>
                                         </div>
-                                        <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
-                                        </div>
+                                        <div class="add-to-cart" >
+                                            </div>
                                     </div>
                                     <?php
                                 }
@@ -474,8 +482,7 @@ $retDeCategoriaAlAzar=mysqli_fetch_assoc($resDeCategoriaAlAzar);
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
-                                        </div>
+                                            </div>
                                     </div>
                                     <?php
                                 }

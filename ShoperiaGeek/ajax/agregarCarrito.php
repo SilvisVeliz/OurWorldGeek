@@ -5,6 +5,7 @@
     foreach ($productos as $key => $value) {
         if($value['id']==$_REQUEST['id']){
             $productos[$key]['cantidad']=$productos[$key]['cantidad']+$_REQUEST['cantidad'];
+            //$productos[$key]['cantidad']=$_REQUEST['cantidad'];
             $siYaEstaProducto=true;
         }
     }
@@ -12,10 +13,13 @@
         $nuevo=array(
             "id"=>$_REQUEST['id'],
             "nombre"=>$_REQUEST['nombre'],
-            "direccionImagen"=>$_REQUEST['direccionImagen'],
+            "precio"=>$_REQUEST['precio'],
+            //"direccionImagen"=>$_REQUEST['direccionImagen']
             "cantidad"=>$_REQUEST['cantidad'],
+
         );
-        array_push($productos,$nuevo);
+        //array_push($productos,$nuevo);
+        array_push($productos, $nuevo);
     }
     setcookie("productos",serialize($productos));
     echo json_encode($productos);

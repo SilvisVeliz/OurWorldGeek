@@ -55,6 +55,7 @@ $modulo=$_REQUEST['modulo']??'';
         .traffic-chart {
             min-height: 335px;
         }
+       /*
         #flotPie1  {
             height: 150px;
         }
@@ -65,6 +66,7 @@ $modulo=$_REQUEST['modulo']??'';
             top: 20px!important;
             right: -10px!important;
         }
+       */
         .chart-container {
             display: table;
             min-width: 270px ;
@@ -327,7 +329,7 @@ $modulo=$_REQUEST['modulo']??'';
                 { label: "Tablet", data: [[1,33]], color: '#ef5350'},
                 { label: "Móviles", data: [[1,35]], color: '#66bb6a'}
             ];
-
+            /*
             $.plot('#flotPie1', piedata, {
                 series: {
                     pie: {
@@ -348,13 +350,14 @@ $modulo=$_REQUEST['modulo']??'';
                     hoverable: true,
                     clickable: true
                 }
-            });
+            });*/
             // Pie chart flotPie1  End
             // cellPaiChart
             var cellPaiChart = [
                 { label: "Ventas directas", data: [[1,65]], color: '#5b83de'},
                 { label: "Ventas de canal", data: [[1,35]], color: '#00bfa5'}
             ];
+            /*
             $.plot('#cellPaiChart', cellPaiChart, {
                 series: {
                     pie: {
@@ -371,16 +374,17 @@ $modulo=$_REQUEST['modulo']??'';
                     clickable: true
                 }
 
-            });
+            });*/
             // cellPaiChart End
             // Line Chart  #flotLine5
             var newCust = [[0, 3], [1, 5], [2,4], [3, 7], [4, 9], [5, 3], [6, 6], [7, 4], [8, 10]];
 
-            var plot = $.plot($('#flotLine5'),[{
+            /*var plot = $.plot($('#flotLine5'),[{
                 data: newCust,
                 label: 'New Data Flow',
                 color: '#fff'
             }],
+                              
             {
                 series: {
                     lines: {
@@ -406,7 +410,7 @@ $modulo=$_REQUEST['modulo']??'';
                 grid: {
                     show: false
                 }
-            });
+            });*/
             // Line Chart  #flotLine5 End
 
 

@@ -254,30 +254,39 @@ $modulo=$_REQUEST['modulo']??'';
 
 								<!-- Cart -->
 
-
-
-
-
 								<div class="dropdown">
 
-									<a class="dropdown-toggle" data-toggle="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" >
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                            <span class="badge badge-danger navgar-badge" id="badgeProducto"></span>
+                                            <span class="badge badge-danger navgar-badge"></span>
                                         <div class="qty"></div>
-									</a>
-									<div class="cart-dropdown" id="listaCarrito">
 
-                                        <div class="cart-summary">
-                                            <small>4 articulos seleccionados</small>
-                                            <h5>SUBTOTAL: $4240.00</h5>
+									</a>
+                                    <!--a href="index.php?modulo=mostrarCarro">Ver carrito</a-->
+                                    <div class="cart-dropdown">
+
+                                        <div class="cart-summary" id="listaCarrito">
+                                            <small></small>
+                                            <h5></h5>
                                         </div>
                                         <div class="cart-btns">
-                                            <a href="#">Ver carro</a>
-                                            <a href="#">Pagar  <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
-									</div>
 
-								</div>
+                                            <!--a href="#">Pagar  <i class="fa fa-arrow-circle-right"></i></a-->
+                                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                <input type="hidden" name="cmd" value="_xclick">
+                                                <input type="hidden" name="business" value="alexmedinatrejo@hotmail.com">
+                                                <input type="hidden" name="lc" value="US">
+                                                <input type="hidden" name="button_subtype" value="services">
+                                                <input type="hidden" name="no_note" value="0">
+                                                <input type="hidden" name="currency_code" value="MXN">
+                                                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                                                <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+                                                <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
 								<!-- /Cart -->
 
 								<!-- Menu Toogle -->
@@ -338,6 +347,9 @@ $modulo=$_REQUEST['modulo']??'';
             }
             if($modulo=="registrarse"){
                 include_once "registrarse.php";
+            }
+            if($modulo=="mostrarCarro"){
+                include_once "mostrarCarro.php";
             }
 
         ?>

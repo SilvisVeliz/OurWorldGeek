@@ -1,7 +1,7 @@
 ------------------------------------------------------------------
 Empleados
 ------------------------------------------------------------------
-ElePala90@gmail.com (Administrador)
+alexmedinatrejo@hotmail.com (Administrador)
 "contras1emp1"
 
 AnaLiz91@gmail.com (Vendedor)

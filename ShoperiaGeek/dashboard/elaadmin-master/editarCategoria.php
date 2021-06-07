@@ -29,7 +29,8 @@ if(isset($_REQUEST['guardar'])){
         }
 
 }
-$queryNombreCategorias=mysqli_query($con,"SELECT idCategoria,nombreCategoria from categoria;");
+
+$queryNombreCategorias=mysqli_query($con,"SELECT idCategoria,nombreCategoria from categoria");
 $res4=mysqli_query($con,$queryNombreCategorias);
 $row4=mysqli_fetch_assoc($res4);
 

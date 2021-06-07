@@ -139,7 +139,7 @@
                         <button class="add-to-cart-btn" id="agregarCarrito"
                                 data-id="<?php echo $_REQUEST['id'] ?>"
                                 data-nombre="<?php echo $rowProducto['nombreProducto'] ?>"
-                                data-direccionImagen="<?php echo $rowProducto['direccionImagen'] ?>"
+                                data-precio="<?php echo $rowProducto['precioOriginal'] ?>"
                                 >
                             <i class="fa fa-shopping-cart" ></i> Agregar al carrito</button>
                     </div>

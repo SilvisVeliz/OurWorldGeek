@@ -3,13 +3,16 @@ $(document).ready(function(){
         e.preventDefault();
        var id=$(this).data('id');
        var nombre=$(this).data('nombre');
-       var direccionImagen=$(this).data('direccionImagen');
+       var precio=$(this).data('precio');
+       //var direccionImagen=$(this).data('direccionImagen');
        var cantidad=$("#cantidadProducto").val();
+
 
        $.ajax({
             type: "post",
             url: "ajax/agregarCarrito.php",
-            data: {"id":id,"nombre":nombre,"direccionImagen":direccionImagen,"cantidad":cantidad},
+            //data: {"id":id,"nombre":nombre,"direccionImagen":direccionImagen,"cantidad":cantidad},
+            data: {"id":id,"nombre":nombre,"precio":precio,"cantidad":cantidad},
             dataType: "json",
             success: function(response){
                 var cantidad=Object.keys(response).lenght;
@@ -19,13 +22,16 @@ $(document).ready(function(){
                             `
                             <a href="index.php?modulo=detalleProducto&id=${element['id']}" class="dropdown-item">
                             <div class="media">
-                                <img src="${element['direccionImagen']}" class=img-size-50 mr-3 img-circle">
+                                <!--img src="${element['direccionImagen']}" class=img-size-50 mr-3 img-circle"-->
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         ${element['nombre']}
                                         <span class="float-right text-sm text-primary"><i class"fas fa-eye"></i></span>
                                     </h3>
                                     <p class="text-sm">Cantidad ${element['cantidad']}</p>
+                                    <p class="text-sm">Precio $ ${element['precio']}</p>
+                                    <p class="text-sm">Total $ ${element['precio']*element['cantidad']} MXN</p>
+                                    
                                 </div>
                             </div>
                             </a>
